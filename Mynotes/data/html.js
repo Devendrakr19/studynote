@@ -283,6 +283,432 @@ const htmlData = [
         <code>&lt;html&gt;</code> tag because it improves accessibility,
         SEO, and user experience.
       </div>
+
+      <h2 style="margin-bottom:15px; margin-top:15px;">&lt;head&gt; Tag</h2>
+
+        <p>
+          <strong>Purpose:</strong> Contains metadata about the document.
+        </p>
+
+        <p style="margin-bottom:5px;>
+          <strong>Metadata</strong> is information not directly visible to users but used by browsers, search engines, and tools.
+        </p>
+
+        <h3>&lt;meta charset="UTF-8"&gt;</h3>
+
+        <p>
+          Defines the character encoding of the HTML document. Ensures that all characters, including special symbols, emojis, and non-English letters, display correctly.
+        </p>
+
+        <h4 style="margin-bottom:5px;">UTF-8</h4>
+
+        <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 10px;">
+            Unicode Transformation Format - 8 bits.
+          </li>
+
+          <li style="margin-bottom: 10px;">
+            Encodes characters from almost all writing systems (Latin, Cyrillic, Arabic, Chinese, emojis, etc.)
+          </li>
+
+          <li>
+            Universal support and compatibility with modern web standards.
+          </li>
+        </ul>
+
+        <h3 style="margin-bottom:10px; margin-top:10px;">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</h3>
+
+        <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 2px;">
+            <strong>meta</strong> = metadata
+          </li>
+
+          <li style="margin-bottom: 2px;">
+            <strong>viewport</strong> = the visible area of the web page on a device (mobile, tablet, desktop)
+          </li>
+
+          <li>
+            <strong>content</strong> = settings for the viewport
+          </li>
+        </ul>
+
+        <p>
+          <strong>Purpose:</strong> Makes the page responsive on all devices.<br>
+          <strong>Why:</strong> Without it, mobile browsers may zoom out and show desktop layout tiny on small screens.
+        </p>
+
+        <h4>Explanation of Attributes</h4>
+
+        <table style="width:100%; border-collapse: collapse; margin-top:10px;">
+          <tr>
+            <th style="border:1px solid #ccc; padding:8px;">Attribute</th>
+            <th style="border:1px solid #ccc; padding:8px;">Meaning</th>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              width=device-width
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Set the width of the page to the device screen width
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              initial-scale=1.0
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Sets initial zoom level (1 = default, no zoom)
+            </td>
+          </tr>
+        </table>
+
+        <h3 style="margin-bottom:15px; margin-top:15px;">&lt;title&gt;My First Page&lt;/title&gt;</h3>
+
+        <p>
+          <strong>Purpose:</strong> Sets the text shown in the browser tab and used by search engines as page title.
+        </p>
+
+        <p>
+          <strong>Why:</strong> Important for:
+        </p>
+
+        <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 5px;">
+            User experience (tab label)
+          </li>
+
+          <li>
+            SEO (Google uses it as clickable search result)
+          </li>
+        </ul>
+
+        <h3 style="margin-bottom:10px; margin-top:10px;">&lt;link rel="stylesheet" href="style.css"&gt;</h3>
+
+        <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 10px;">
+            <strong>link</strong> → links external resources
+          </li>
+
+          <li style="margin-bottom: 10px;">
+            <strong>rel="stylesheet"</strong> → relationship: this link is a CSS stylesheet
+          </li>
+
+          <li>
+            <strong>href="style.css"</strong> → hyperlink reference to the CSS file location
+          </li>
+        </ul>
+
+        <p>
+          <strong>Purpose:</strong> Connects an external CSS file to style your HTML page.
+        </p>
+
+        <p>
+          <strong>Why:</strong> Keeps content (HTML) separate from presentation (CSS), which is best practice.
+        </p>
+
+        <p>
+          <strong>When:</strong> In &lt;head&gt;, so CSS loads before the page renders.
+        </p>
+
+        <h3 style="margin-bottom:10px; margin-top:10px;">&lt;body&gt; Tag</h3>
+
+        <p>
+          Contains all visible content of the webpage. like Text, images, links, lists, tables, forms, multimedia, etc.
+        </p>
+
+        <h3>Example</h3>
+
+        <div class="code">
+   
+
+          &lt;body&gt;
+            Content goes here
+          &lt;/body&gt;
+ 
+        </div>
+
+        <div style="margin-top:20px; padding:12px; border-left:4px solid #007bff;">
+          <strong>Interview Tip:</strong>
+          The most commonly used tags inside the <code>&lt;head&gt;</code> section are
+          <code>&lt;meta&gt;</code>, <code>&lt;title&gt;</code>, and
+          <code>&lt;link&gt;</code>. Questions about UTF-8, viewport, and SEO are very common in interviews.
+        </div>
+
+        <h2 style="margin-bottom:15px; margin-top:15px;">Head vs Body</h2>
+
+        <table style="width:100%; border-collapse: collapse; margin-top:10px;">
+          <tr>
+            <th style="border:1px solid #ccc; padding:8px;">Feature</th>
+            <th style="border:1px solid #ccc; padding:8px;">&lt;head&gt;</th>
+            <th style="border:1px solid #ccc; padding:8px;">&lt;body&gt;</th>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Purpose
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Metadata / info about page
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Visible content for users
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Visible on page
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              ❌ No
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              ✅ Yes
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Typical content
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;title&gt;, &lt;meta&gt;, &lt;link&gt;, &lt;script&gt;, &lt;style&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Text, images, links, forms, tables, videos, interactive elements
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Function in browser
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Helps browser render, SEO, layout, responsiveness
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Displays actual page content, interactivity
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Location
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Inside &lt;html&gt; at top
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Inside &lt;html&gt; after &lt;head&gt;
+            </td>
+          </tr>
+        </table>
+
+        <h2 style="margin-bottom:15px; margin-top:15px;">Tag</h2>
+
+        <p>
+          A tag is a markup keyword enclosed in angle brackets that tells the browser how to handle content.
+        </p>
+
+        <h3 style="margin-bottom:5px;">Types</h3>
+
+        <ol style="padding-left:20px;">
+          <li style="margin-bottom:15px;">
+            <strong>Opening tag:</strong> Starts an element → <code>&lt;p&gt;</code>
+          </li>
+
+          <li style="margin-bottom:15px;">
+            <strong>Closing tag:</strong> Ends an element → <code>&lt;/p&gt;</code>
+          </li>
+
+          <li>
+            <strong>Self-closing tag:</strong> Single tag that doesn’t need a closing tag →
+            <code>&lt;img src="image.jpg" alt="Image"&gt;</code>
+          </li>
+        </ol>
+
+        <h2 style="margin-bottom:15px; margin-top:15px;">Element</h2>
+
+        <p>
+          An element is the complete structure in HTML, including the opening tag, content, and closing tag.
+        </p>
+
+        <ul style="padding-left:20px;">
+          <li style="margin-bottom:10px;">
+            Element = <code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code>
+          </li>
+
+          <li style="margin-bottom:10px;">
+            Tag = <code>&lt;p&gt;</code> or <code>&lt;/p&gt;</code>
+          </li>
+
+          <li>
+            Content = This is a paragraph.
+          </li>
+        </ul>
+
+        <h2 style="margin-bottom:15px; margin-top:15px;">Void (Self-Closing) Elements</h2>
+
+        <p>
+          HTML elements that do not have any content or closing tag.
+        </p>
+
+        <p>
+          Example:
+          <code>&lt;img src="logo.png" alt="Logo"&gt;</code>
+        </p>
+
+        <table style="width:100%; border-collapse: collapse; margin-top:10px;">
+          <tr>
+            <th style="border:1px solid #ccc; padding:8px;">Void Element</th>
+            <th style="border:1px solid #ccc; padding:8px;">Default Display</th>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;img&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              inline (but acts like inline-block visually)
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;br&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              inline (forces line break)
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;hr&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              block
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;input&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              inline-block
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;meta&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              none (not rendered visually)
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;link&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              none (not visible)
+            </td>
+          </tr>
+        </table>
+
+        <h2 style="margin-bottom:15px; margin-top:15px;">Attribute</h2>
+
+        <p>
+          Attributes provide extra information about an element.
+        </p>
+
+        <table style="width:100%; border-collapse: collapse; margin-top:10px;">
+          <tr>
+            <th style="border:1px solid #ccc; padding:8px;">Element</th>
+            <th style="border:1px solid #ccc; padding:8px;">Attribute</th>
+            <th style="border:1px solid #ccc; padding:8px;">Purpose</th>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;a&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              href="..."
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Link URL
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;a&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              target="_blank"
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Open link in new tab
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;img&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              src="..."
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Image source
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px;">
+              &lt;img&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              alt="..."
+            </td>
+            <td style="border:1px solid #ccc; padding:8px;">
+              Alternative text if image fails
+            </td>
+          </tr>
+        </table>
+
+        <h2 style="margin-bottom:15px; margin-top:15px;">Comments</h2>
+
+        <p>
+          Comments are notes or explanations in your code that the browser ignores — they don’t affect how the page looks or works.
+        </p>
+
+        <p>
+          They’re used only for developers to understand or organize code.
+        </p>
+
+        <h3>Example</h3>
+
+        <div class="code">
+          &lt;!-- This is a comment --&gt;
+        </div>
+
+        <div style="margin-top:20px; padding:12px; border-left:4px solid #007bff;">
+          <strong>Interview Tip:</strong>
+          Remember the difference:
+          <br><br>
+          <strong>Tag</strong> = Opening or closing markup such as <code>&lt;p&gt; &lt;/p&gt;</code>.
+          <br>
+          <strong>Element</strong> = Complete structure including tag + content.
+          <br>
+          <strong>Attribute</strong> = Extra information added inside a tag.
+        </div>
     `,
   },
   {
