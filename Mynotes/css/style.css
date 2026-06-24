@@ -1,0 +1,156 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#0110339e;
+  color:white;
+  padding: 10px;
+}
+
+header{
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px; 
+    background:#0f172a;
+  border-radius: 8px;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+#searchInput{
+  width:300px;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  outline: none;
+}
+
+#themeBtn{
+  padding:10px;
+  cursor:pointer;
+  background: transparent;
+  border: none;
+}
+
+.container{
+  display:flex;
+  gap: 10px;
+  height:calc(100vh - 100px);
+  margin-top: 10px;
+}
+
+.sidebar{
+  width: 20%;
+  overflow:auto; 
+  background:#111827;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.category h3{
+  padding:15px;
+  background:#1f2937;
+}
+
+.category ul{
+  list-style:none;
+}
+
+.category li{
+  padding:12px 20px;
+  cursor:pointer;
+}
+
+.category li:hover{
+  background:#1e293b;
+}
+
+.content{
+  width: 80%;
+  overflow:auto;
+  border-radius: 8px;
+  padding:30px;
+  background:#0f172a;
+}
+
+.content h1{
+  margin-bottom:20px;
+}
+
+.content p{
+  margin-bottom:15px;
+  line-height:1.7;
+}
+
+.code{
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  overflow:auto;
+  margin:20px 0;
+}
+
+.section-header{
+  padding:15px;
+  background:#1f2937;
+  cursor:pointer;
+  font-weight:bold;
+  user-select:none;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.section-header:hover{
+  background:#334155;
+}
+
+.section-list{
+  list-style:none;
+  padding: 10px;
+}
+
+.section-list li{
+  padding:12px 25px;
+  cursor:pointer;
+  transition:.2s;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.section-list li:hover{
+  background:#1e293b;
+}
+
+.active-topic{
+  background:#04AA6D !important;
+  color:white;
+  font-weight:bold;
+}
+
+.hidden{
+  display:none;
+}
+
+.navigation{
+  margin-top:50px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.navigation button{
+  background:#04AA6D;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:5px;
+  cursor:pointer;
+}

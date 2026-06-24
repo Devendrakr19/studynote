@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Hub</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">📚 Study Notes</div>
+
+      <input type="text" id="searchInput" placeholder="Search..." />
+
+      <!-- <button id="themeBtn">🌙</button> -->
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <div class="section">
+          <div class="section-header">▼ HTML Tutorial</div>
+
+          <ul id="htmlList" class="section-list"></ul>
+        </div>
+
+        <div class="section">
+          <div class="section-header">▼ CSS Tutorial</div>
+
+          <ul id="cssList" class="section-list"></ul>
+        </div>
+
+        <div class="section">
+          <div class="section-header">▼ DSA Tutorial</div>
+
+          <ul id="dsaList" class="section-list"></ul>
+        </div>
+      </aside>
+      <main class="content">
+        <div id="contentArea">Select a topic from sidebar</div>
+
+        <div class="navigation">
+          <button id="prevBtn">❮ Previous</button>
+
+          <button id="nextBtn">Next ❯</button>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
