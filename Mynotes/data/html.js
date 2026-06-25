@@ -713,20 +713,1052 @@ const htmlData = [
   },
   {
     title: "Text Formatting",
-    content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
+    content: ` 
+        <h2 style="margin-bottom:15px;">Text Formatting &amp; Content</h2>
+
+        <h3>Headings</h3>
+
+        <p>
+          Headings define the titles or subtitles of sections in a webpage.
+        </p>
+
+        <p>
+          They help both users and search engines understand the content hierarchy and structure.
+        </p>
+
+        <h3>Examples</h3>
+
+        <div class="code">
+          &lt;h1&gt;This is heading level 1&lt;/h1&gt;
+          <br>
+          &lt;h2&gt;This is heading level 2&lt;/h2&gt;
+          <br>
+          &lt;h3&gt;This is heading level 3&lt;/h3&gt;
+          <br>
+          &lt;h4&gt;This is heading level 4&lt;/h4&gt;
+          <br>
+          &lt;h5&gt;This is heading level 5&lt;/h5&gt;
+          <br>
+          &lt;h6&gt;This is heading level 6&lt;/h6&gt;
+        </div>
+
+        <h3 style="margin-bottom:15px;">Output</h3>
+        <div class="output">
+          <h1 style="margin-bottom:0px;">This is heading level 1</h1><br>
+          <h2>This is heading level 2</h2><br>
+          <h3>This is heading level 3</h3><br>
+          <h4>This is heading level 4</h4><br>
+          <h5>This is heading level 5</h5><br>
+          <h6>This is heading level 6</h6><br>
+        </div>
+
+        <h3>Heading Levels</h3>
+
+        <table style="width:100%; border-collapse: collapse; margin-top:10px;">
+          <tr>
+            <th style="border:1px solid #ccc; padding:8px;">Tag</th>
+            <th style="border:1px solid #ccc; padding:8px;">Importance</th>
+            <th style="border:1px solid #ccc; padding:8px;">Default Browser Size</th>
+            <th style="border:1px solid #ccc; padding:8px;">Usage</th>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              &lt;h1&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Highest
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              ~32px (largest)
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Page title
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              &lt;h2&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              High
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              ~24px
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Section title
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              &lt;h3&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Medium
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              ~20px
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Sub-section
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              &lt;h4&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Low
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              ~16px
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Sub-sub-section
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              &lt;h5&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Lower
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              ~13px
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Minor section
+            </td>
+          </tr>
+
+          <tr>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              &lt;h6&gt;
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Lowest
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              ~10px
+            </td>
+            <td style="border:1px solid #ccc; padding:8px; text-align: center">
+              Smallest heading
+            </td>
+          </tr>
+        </table>
+
+        <div style="margin-top:20px; padding:12px; border-left:4px solid #007bff;">
+          <strong>Interview Tip:</strong>
+          Use only one <code>&lt;h1&gt;</code> per page for the main title. Follow a proper hierarchy such as
+          <code>&lt;h1&gt;</code> → <code>&lt;h2&gt;</code> → <code>&lt;h3&gt;</code> to improve SEO, accessibility, and content structure.
+        </div>
+
+        <h2 style="margin-top:20px;">Paragraph</h2>
+          <p>
+            The <code>&lt;p&gt;</code> tag defines a paragraph of text — a basic block of content in HTML.
+          </p>
+
+          <p>
+            It represents a logical section of text (like a sentence or group of sentences).
+          </p>
+
+          <h3>Example</h3>
+
+          <div class="code">
+            &lt;p&gt;This is a paragraph in HTML.&lt;/p&gt;
+          </div>
+
+          <h3>Output</h3>
+
+          <div class="output">
+            <p>This is a paragraph in HTML.</p>
+          </div>
+
+          <h2>&lt;br&gt; — Line Break Element</h2>
+
+          <p>
+            The <code>&lt;br&gt;</code> (line break) tag is used to force text to break and continue on a new line within the same paragraph or block of text.
+          </p>
+
+          <h3>Example</h3>
+
+          <div class="code">
+            Hello World!&lt;br&gt;
+            Welcome to HTML.
+          </div>
+
+          <h3>Output</h3>
+
+          <div class="output">
+            Hello World!<br>
+            Welcome to HTML.
+          </div>
+
+          <h2 style="margin-top:15px;">&lt;hr&gt; — Horizontal Rule Element</h2>
+
+          <p>
+            The <code>&lt;hr&gt;</code> tag represents a thematic break between sections of content — like a section divider or topic change.
+          </p>
+
+          <p>
+            Originally it was a horizontal line, but in HTML5, its meaning is semantic:
+          </p>
+
+          <p>
+            Represents a paragraph-level thematic break (A separation between two different topics or ideas).
+          </p>
+
+          <h3>Example</h3>
+
+          <div class="code">
+            &lt;p&gt;HTML is used to structure web pages.&lt;/p&gt;
+
+            &lt;hr&gt; 
+          </div>
+
+          <h3>Output</h3>
+
+          <div class="output">
+            <p>HTML is used to structure web pages.</p>
+            <hr>             
+          </div> 
+
+          <h2 style="margin-top:15px;">&lt;b&gt; — Bold (Styling Only)</h2>
+
+          <p>
+            Bold text Only visual — no extra importance for search engines or screen readers.
+          </p>
+
+          <h4>Example</h4>
+
+          <div class="code">
+            &lt;b&gt;This text is bold&lt;/b&gt;
+          </div>
+
+          <h4>Output</h4>
+
+          <div class="output">
+            <b>This text is bold</b>
+          </div> 
+
+          <h2 style="margin-top:15px;">&lt;strong&gt;</h2>
+
+          <p>
+            Bold text has semantic importance — screen readers announce it as “strong emphasis”.
+          </p>
+
+          <p>
+            Use for: Warnings, alerts, key points.
+          </p>
+
+          <p>
+            SEO Impact: <code>&lt;strong&gt;</code> helps search engines understand “important” text.
+          </p>
+
+          <h4>Example</h4>
+
+          <div class="code">
+            &lt;strong&gt;Warning: Do not share your password.&lt;/strong&gt;
+          </div>
+
+          <h4>Output</h4>
+
+          <div class="output">
+            <strong>Warning: Do not share your password.</strong>
+          </div> 
+
+          <h2 style="margin-top:15px;">&lt;i&gt; — Italic (Styling Only)</h2>
+
+          <p>
+            Italic text Only visual.
+          </p>
+
+          <p>
+            Use for: Names, foreign words, technical terms, etc.
+          </p>
+
+          <h4>Example</h4>
+
+          <div class="code">
+            &lt;i&gt;Bonjour&lt;/i&gt;
+          </div>
+
+          <h4>Output</h4>
+
+          <div class="output">
+            <i>Bonjour</i>
+          </div> 
+
+          <h2 style="margin-top:15px;">&lt;em&gt; — Emphasis (Semantic Italic)</h2>
+
+          <p>
+            Italic text Adds emphasis in speech (semantic).
+          </p>
+
+          <p>
+            Screen readers stress it vocally.
+          </p>
+
+          <p>
+            Use for: Meaningful emphasis.
+          </p>
+
+          <h4>Example</h4>
+
+          <div class="code">
+            Please &lt;em&gt;read carefully&lt;/em&gt; before submitting.
+          </div>
+
+          <h4>Output</h4>
+
+          <div class="output">
+            Please <em>read carefully</em> before submitting.
+          </div> 
+          <h2 style="margin-top:15px;">&lt;mark&gt; — Highlighted Text</h2>
+
+          <p>
+            Yellow highlighted background (like a highlighter).
+          </p>
+
+          <p>
+            Indicates relevant or highlighted text.
+          </p>
+
+          <p>
+            Use for: Search results, matches, or focus text.
+          </p>
+
+          <h4>Example</h4>
+
+          <div class="code">
+            HTML is a &lt;mark&gt;markup language&lt;/mark&gt;.
+          </div>
+
+          <h4>Output</h4>
+
+          <div class="output">
+            HTML is a <mark>markup language</mark>.
+          </div> 
+
+          <h2 style="margin-top:15px;">&lt;small&gt; — Smaller, Secondary Text</h2>
+
+          <p>
+            The <code>&lt;small&gt;</code> element makes text smaller than the surrounding text and also indicates that the text is less important — often secondary information.
+          </p>
+
+          <p>
+            If the paragraph text is 16px, then <code>&lt;small&gt;</code> will render around 12.8px (≈ 80% of 16px).
+          </p>
+
+          <h4>Example</h4>
+
+          <div class="code">
+            Copyright 2026 &lt;small&gt;All Rights Reserved&lt;/small&gt;
+          </div>
+
+          <h4>Output</h4>
+
+          <div class="output">
+            Copyright 2026 <small>All Rights Reserved</small>
+          </div> 
+
+          <h2 style="margin-top:15px;">&lt;sub&gt; — Subscript</h2>
+
+          <p>
+            Lowers text slightly below baseline.
+          </p>
+
+          <p>
+            Use for: Chemical formulas, math expressions, etc.
+          </p>
+
+          <h4>Example</h4>
+
+          <div class="code">
+            H&lt;sub&gt;2&lt;/sub&gt;O
+          </div>
+
+          <h4>Output</h4>
+
+          <div class="output">
+            H<sub>2</sub>O
+          </div> 
+
+          <h2 style="margin-top:15px;">&lt;sup&gt; — Superscript</h2>
+
+          <p>
+            Raises text slightly above baseline.
+          </p>
+
+          <p>
+            Use for: Exponents, footnote numbers, dates (1&lt;sup&gt;st&lt;/sup&gt;)
+          </p>
+
+          <h4>Example</h4>
+
+          <div class="code">
+            x&lt;sup&gt;2&lt;/sup&gt;
+            <br>
+            1&lt;sup&gt;st&lt;/sup&gt;
+          </div>
+
+          <h4>Output</h4>
+
+          <div class="output">
+            x<sup>2</sup>
+            <br>
+            1<sup>st</sup>
+          </div> 
+
+          <h2 style="margin-top:15px;">Semantic Text Tags</h2>
+
+          <p>
+            Semantic text tags are all about meaning, not just how text looks.
+          </p>
+
+          <p>
+            They help accessibility, SEO, and structured content.
+          </p>
+
+          <p>
+            Use <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;mark&gt;</code>, <code>&lt;small&gt;</code>, <code>&lt;sub&gt;</code>, <code>&lt;sup&gt;</code>, <code>&lt;abbr&gt;</code>, <code>&lt;time&gt;</code>, <code>&lt;dfn&gt;</code>, and <code>&lt;cite&gt;</code> appropriately.
+          </p>
+
+          <p>
+            <strong>Always provide attributes when meaningful</strong> (e.g., <code>&lt;abbr title="..."&gt;</code>, <code>&lt;time datetime="..."&gt;</code>).
+          </p>
+`,
   },
   {
     title: "Links & Media",
-    content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
+    content: `
+    <h2>Links &amp; Navigation</h2>
+
+    <h3 style="margin-top:15px;">Anchor &lt;a&gt; Tag</h3>
+
+    <p>
+      The <code>&lt;a&gt;</code> tag is used to create hyperlinks, which allow users to navigate:
+    </p>
+
+    <ul style="padding-left: 20px;">
+      <li>To another page</li>
+      <li>To a section of the same page</li>
+      <li>To an external website</li>
+      <li>To download a file or trigger an action</li>
+    </ul>
+
+    <h3 style="margin-top:15px; margin-bottom:5px;">Key Attributes</h3>
+
+    <table style="width:100%; border-collapse: collapse;">
+      <tr>
+        <th style="border:1px solid #ccc; padding:8px;">Attribute</th>
+        <th style="border:1px solid #ccc; padding:8px;">Purpose</th>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">href</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          URL to link to (required)
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">target</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Where to open the link (_self, _blank, _parent, _top)
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">rel</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Relationship of linked document (nofollow, noopener, noreferrer)
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">title</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Extra info tooltip
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">download</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Download file instead of opening
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">id</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          For internal anchors/fragment links
+        </td>
+      </tr>
+    </table>
+
+    <h2 style="margin-top:15px; margin-bottom:15px;">Absolute vs Relative URLs</h2>
+
+    <h3 style="margin-bottom:5px;">Absolute URL</h3>
+
+    <ul style="padding-left: 20px;">
+      <li>
+        Full path including protocol (http/https) and domain.
+      </li>
+
+      <li>
+        Always points to the same location, regardless of the current page.
+      </li>
+    </ul>
+    <h4 style="margin-top:10px;">Example</h4>
+    <div class="code" style="margin-top:5px;">
+      &lt;a href="https://www.google.com"&gt;Visit Google&lt;/a&gt;
+    </div> 
+
+    <h3 style="margin-bottom:5px;">Relative URL</h3>
+
+    <ul style="padding-left: 20px;">
+      <li>
+        Path relative to current file location.
+      </li>
+
+      <li>
+        Flexible if moving pages around in the same website.
+      </li>
+    </ul>
+
+    <p>
+      <strong>Use for:</strong> Internal navigation within your website.
+    </p>
+    <h4 style="margin-top:10px;">Example</h4>
+    <div class="code" style="margin-top:5px;">
+      &lt;a href="about.html"&gt;About Us&lt;/a&gt;
+    </div>
+
+    <h2 style="margin-bottom:10px;">target Attribute</h2>
+    <div class="code">
+      &lt;a href="https://www.google.com" target="_self"&gt;Open in Same Tab&lt;/a&gt;
+
+      <br><br>
+
+      &lt;a href="https://www.google.com" target="_blank"&gt;Open in New Tab&lt;/a&gt;
+    </div>
+
+    <table style="width:100%; border-collapse: collapse;">
+      <tr>
+        <th style="border:1px solid #ccc; padding:8px;">Value</th>
+        <th style="border:1px solid #ccc; padding:8px;">Meaning</th>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">_self</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Default, opens link in the same tab
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">_blank</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Opens link in a new tab/window
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">_parent</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Opens in parent frame
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">_top</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Opens in full body of window (breaks out of frames)
+        </td>
+      </tr>
+    </table> 
+    <h2 style="margin-bottom:10px; margin-top:15px;">rel Attribute</h2>
+
+    <p>
+      Defines relationship between the current document and the linked document.
+    </p>
+    <div class="code">
+      &lt;a href="https://example.com"
+        target="_blank"
+        rel="noopener noreferrer"&gt;
+        Secure External Link
+      &lt;/a&gt;
+    </div>
+
+    <table style="width:100%; border-collapse: collapse;">
+      <tr>
+        <th style="border:1px solid #ccc; padding:8px;">Value</th>
+        <th style="border:1px solid #ccc; padding:8px;">Meaning</th>
+        <th style="border:1px solid #ccc; padding:8px;">Use</th>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">noopener</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Prevents new page from controlling original page
+        </td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Security with _blank
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">noreferrer</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Don’t send HTTP referrer
+        </td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Privacy &amp; security
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">nofollow</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Tells search engines not to follow link
+        </td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          SEO for sponsored/outbound links
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">author</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Link points to author of current doc
+        </td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Semantic linking
+        </td>
+      </tr>
+    </table> 
+    `,
   },
   {
-    title: "Lists",
-    content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
-  },
-  {
-    title: "Tables",
-    content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
-  },
+    title: "Lists & Tables",
+    content: ` 
+      <h2>Lists</h2>
+
+      <h3 style="margin-bottom:5px; margin-top:15px;">Ordered Lists &lt;ol&gt;</h3>
+
+      <ul style="padding-left: 20px;">
+        <li>
+          Display items in a specific order (numbers, letters, roman numerals).
+        </li>
+
+        <li>
+          Useful for instructions, steps, or ranked items.
+        </li>
+      </ul>
+
+      <h4 style="margin-top:10px;">Example</h4>
+
+      <div class="code" style="margin-top:8px;">
+        &lt;ol&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Install VS Code&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Create an HTML File&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Run in Browser&lt;/li&gt;<br>
+        &lt;/ol&gt;
+      </div>
+
+      <h4 style="margin-bottom:5px;">Output</h4>
+
+      <div class="output">
+        <ol style="margin-left:20px;">
+          <li>Install VS Code</li>
+          <li>Create an HTML File</li>
+          <li>Run in Browser</li>
+        </ol>
+      </div>
+
+      <h4 style="margin-bottom:10px; margin-top:15px;">Customization with type Attribute</h4>
+
+      <table style="width:100%; border-collapse: collapse;">
+        <tr>
+          <th style="border:1px solid #ccc; padding:8px;">type</th>
+          <th style="border:1px solid #ccc; padding:8px;">Output</th>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">1 (default)</td>
+          <td style="border:1px solid #ccc; padding:8px;">1, 2, 3…</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">A</td>
+          <td style="border:1px solid #ccc; padding:8px;">A, B, C…</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">a</td>
+          <td style="border:1px solid #ccc; padding:8px;">a, b, c…</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">I</td>
+          <td style="border:1px solid #ccc; padding:8px;">I, II, III…</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">i</td>
+          <td style="border:1px solid #ccc; padding:8px;">i, ii, iii…</td>
+        </tr>
+      </table>
+
+      <h4 style="margin-top:10px;">Example</h4>
+
+      <div class="code" style="margin-top:8px;">
+          &lt;ol type="A"&gt;<br>
+          &nbsp;&nbsp;&lt;li&gt;HTML&lt;/li&gt;<br>
+          &nbsp;&nbsp;&lt;li&gt;CSS&lt;/li&gt;<br>
+          &nbsp;&nbsp;&lt;li&gt;JavaScript&lt;/li&gt;<br>
+          &lt;/ol&gt;
+      </div>
+
+      <h4 style="margin-bottom:5px;">Output</h4>
+
+      <div class="output">
+        <ol type="A" style="margin-left:20px;">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ol>
+      </div> 
+
+      <h3 style="margin-bottom:5px; margin-top:15px;">Unordered Lists &lt;ul&gt;</h3>
+
+      <ul style="padding-left: 20px;">
+        <li>
+          Display items without specific order (bullets by default).
+        </li>
+
+        <li>
+          Useful for menus, features, checklists.
+        </li>
+      </ul>
+
+      <p style="margin-top:10px;">
+        Customization with type (deprecated) or CSS (recommended).
+      </p>
+      <div class="code" style="margin-top:8px;">
+          ul { <br>
+            &nbsp;&nbsp; list-style-type: circle;  /* disc, circle, square, none */ <br>
+          }
+      </div>
+
+      <h4 style="margin-top:10px;">Example</h4>
+
+      <div class="code" style="margin-top:8px;">
+        &lt;ul&gt;<br>
+         &nbsp;&nbsp;&lt;li&gt;HTML&lt;/li&gt;<br>
+          &nbsp;&nbsp;&lt;li&gt;CSS&lt;/li&gt;<br>
+          &nbsp;&nbsp;&lt;li&gt;JavaScript&lt;/li&gt;<br>
+        &lt;/ul&gt;
+      </div>
+
+      <h4 style="margin-bottom:5px;">Output</h4>
+
+      <div class="output">
+        <ul style="margin-left:20px;">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </div> 
+
+      <h3 style="margin-top:15px; margin-bottom:5px;">&lt;dl&gt; — Definition List</h3>
+
+      <p>
+        Container for a list of terms and definitions.
+      </p>
+
+      <h3>&lt;dt&gt; — Definition Term</h3>
+
+      <p>
+        Represents the term being defined.
+      </p>
+
+      <h3>&lt;dd&gt; — Definition Description</h3>
+
+      <p>
+        Provides the explanation or definition of the <code>&lt;dt&gt;</code> term.
+      </p>
+
+      <h4 style="margin-top:10px;">Example</h4>
+
+      <div class="code" style="margin-top:8px;">
+        &lt;dl&gt;<br>
+          &nbsp;&nbsp;&lt;dt&gt;HTML&lt;/dt&gt;<br>
+          &nbsp;&nbsp;&lt;dd&gt;HyperText Markup Language&lt;/dd&gt;<br><br>
+          &nbsp;&nbsp;&lt;dt&gt;CSS&lt;/dt&gt;<br>
+          &nbsp;&nbsp;&lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;<br>
+        &lt;/dl&gt;
+      </div>
+
+      <h4 style="margin-bottom:5px;">Output</h4>
+
+      <div class="output">
+        <dl style="margin-left:5px;">
+          <dt><strong>HTML</strong></dt>
+          <dd>HyperText Markup Language</dd>
+
+          <dt style="margin-top:10px;"><strong>CSS</strong></dt>
+          <dd>Cascading Style Sheets</dd>
+        </dl>
+      </div>
+
+      <h2 style="margin-top:30px;">Table</h2>
+
+      <p>
+        Tables are used to display tabular data — data organized in rows and columns.
+      </p>
+
+      <h3 style="margin-bottom:5px;">Table Elements</h3>
+
+      <table style="width:100%; border-collapse: collapse;">
+        <tr>
+          <th style="border:1px solid #ccc; padding:8px;">Tag</th>
+          <th style="border:1px solid #ccc; padding:8px;">Purpose</th>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">&lt;table&gt;</td>
+          <td style="border:1px solid #ccc; padding:8px;">Container for the table</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">&lt;tr&gt;</td>
+          <td style="border:1px solid #ccc; padding:8px;">Table row</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">&lt;td&gt;</td>
+          <td style="border:1px solid #ccc; padding:8px;">Table data cell</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">&lt;th&gt;</td>
+          <td style="border:1px solid #ccc; padding:8px;">Table header cell (bold &amp; centered by default)</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">&lt;caption&gt;</td>
+          <td style="border:1px solid #ccc; padding:8px;">Table title / description</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">&lt;thead&gt;</td>
+          <td style="border:1px solid #ccc; padding:8px;">Table header section (optional)</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">&lt;tbody&gt;</td>
+          <td style="border:1px solid #ccc; padding:8px;">Table body section (optional)</td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">&lt;tfoot&gt;</td>
+          <td style="border:1px solid #ccc; padding:8px;">Table footer section (optional)</td>
+        </tr>
+      </table>
+
+      <h3 style="margin-top:10px;">Example</h3>
+
+      <div class="code" style="margin-top:8px;">
+      <pre>
+      &lt;table&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Age&lt;/th&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;Devendra&lt;/td&gt;
+          &lt;td&gt;25&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+      </pre>
+      </div>
+
+      <h4 style="margin-bottom:5px;">Output</h4>
+
+      <div class="output">
+        <table border="1" style="border-collapse: collapse;">
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+          <tr>
+            <td>Devendra</td>
+            <td>25</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3 style="margin-top:20px; margin-bottom:5px;">Table Headers</h3>
+
+      <ul style="padding-left:20px;">
+        <li>Use &lt;th&gt; for column or row headers.</li>
+        <li>Helps accessibility and semantic structure.</li>
+      </ul>
+
+      <p style="margin-top:5px;">
+        The scope attribute on &lt;th&gt; tells screen readers and assistive technologies what the header refers to:
+      </p>
+
+      <h4 style="margin-top:10px;">Example</h4>
+
+      <div class="code" style="margin-top:8px;">
+      <pre>
+      &lt;table&gt;
+        &lt;tr&gt;
+          &lt;th scope="col"&gt;Name&lt;/th&gt;
+          &lt;th scope="col"&gt;Age&lt;/th&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;Devendra&lt;/td&gt;
+          &lt;td&gt;25&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:15px; margin-bottom:5px;">Table Caption</h3>
+
+      <ul style="padding-left:20px;">
+        <li>&lt;caption&gt; adds a title or description of the table.</li>
+        <li>Improves accessibility (screen readers announce it).</li>
+      </ul>
+
+      <h4 style="margin-top:10px;">Example</h4>
+
+      <div class="code" style="margin-top:8px;">
+      <pre>
+      &lt;table&gt;
+        &lt;caption&gt;Student Information&lt;/caption&gt;
+
+        &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Age&lt;/th&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;Devendra&lt;/td&gt;
+          &lt;td&gt;25&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+      </pre>
+      </div>
+
+      <h4 style="margin-bottom:5px;">Output</h4>
+
+      <div class="output">
+        <table border="1" style="border-collapse: collapse;">
+          <caption style="white-space: nowrap;">Student Information</caption>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+          <tr>
+            <td>Devendra</td>
+            <td>25</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3 style="margin-top:20px;">Merging Cells</h3>
+
+      <p>
+        Column span (colspan) → merge multiple columns into one cell.
+      </p>
+      <div class="code">
+      <pre>
+      &lt;table&gt;
+        &lt;tr&gt;
+          &lt;th colspan="2"&gt;Student Details&lt;/th&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;Name&lt;/td&gt;
+          &lt;td&gt;Devendra&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+      </pre>
+      </div>
+
+      <p>
+        Row span (rowspan) → merge multiple rows into one cell.
+      </p>  
+
+      <div class="code">
+      <pre>
+      &lt;table&gt;
+        &lt;tr&gt;
+          &lt;td rowspan="2"&gt;HTML&lt;/td&gt;
+          &lt;td&gt;Basics&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;Advanced&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-bottom:5px;">Semantic Sections</h3>
+
+      <ul style="padding-left:20px;">
+        <li>&lt;thead&gt; → contains header rows</li>
+        <li>&lt;tbody&gt; → contains body rows</li>
+        <li>&lt;tfoot&gt; → contains footer rows (e.g., totals)</li>
+      </ul>
+
+      <h4 style="margin-top:10px;">Example</h4>
+
+      <div class="code" style="margin-top:8px;">
+      <pre>
+      &lt;table&gt;
+
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Laptop&lt;/td&gt;
+            &lt;td&gt;50000&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+
+        &lt;tfoot&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Total&lt;/td&gt;
+            &lt;td&gt;50000&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tfoot&gt;
+
+      &lt;/table&gt;
+      </pre>
+      </div>
+    `,
+  }, 
   {
     title: "Forms",
     content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
