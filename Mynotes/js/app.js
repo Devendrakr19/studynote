@@ -14,6 +14,10 @@ const contentArea = document.getElementById("contentArea");
 const searchInput = document.getElementById("searchInput");
 const headers = document.querySelectorAll(".section-header");
 
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.getElementById("overlay");
+
 // ========================================
 // CURRENT ACTIVE STATE
 //
@@ -98,6 +102,11 @@ function renderSidebar(data, list) {
       currentList = list;
 
       showContent();
+
+        // Close sidebar on mobile
+  sidebar.classList.remove("show");
+  overlay.classList.remove("show");
+
     });
 
     list.appendChild(li);
@@ -208,3 +217,14 @@ document.getElementById("prevBtn").addEventListener("click", () => {
 // ========================================
 
 loadTopics();
+
+
+menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("show");
+    overlay.classList.toggle("show");
+});
+
+overlay.addEventListener("click", () => {
+    sidebar.classList.remove("show");
+    overlay.classList.remove("show");
+});

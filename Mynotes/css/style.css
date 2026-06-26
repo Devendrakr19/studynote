@@ -139,3 +139,118 @@ header{
   border-radius:5px;
   cursor:pointer;
 }
+
+/* Hide hamburger on desktop */
+.menu-btn{
+    display:none;
+    font-size:28px;
+    background:none;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+/* Overlay for mobile */
+.overlay{
+    display:none;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    header{
+        gap:10px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .logo{
+        font-size:18px; 
+    }
+
+    #searchInput{
+        width:50%;
+    }
+
+    .container{
+        position:relative;
+    }
+
+    .sidebar{
+        position:fixed;
+        left:-280px;
+        top:0;
+        width:260px;
+        height:100vh;
+        z-index:1000;
+        transition:.3s;
+        border-radius:0;
+    }
+
+    .sidebar.show{
+        left:0;
+    }
+
+    .content{
+        width:100%;
+    }
+
+    .overlay{
+        display:block;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.4);
+        opacity:0;
+        visibility:hidden;
+        transition:.3s;
+        z-index:999;
+    }
+
+    .overlay.show{
+        opacity:1;
+        visibility:visible;
+    }
+}
+
+/* ================================
+   TABLET (769px - 1024px)
+================================ */
+@media (min-width:769px) and (max-width:1024px){
+
+    header{
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    #searchInput{
+        width:250px;
+    }
+
+    .sidebar{
+        width:30%;
+    }
+
+    .content{
+        width:70%;
+        padding:25px;
+    }
+
+    .section-header{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .section-list li{
+        padding:10px 15px;
+        font-size:14px;
+    }
+
+    .navigation button{
+        padding:10px 18px;
+    }
+}
