@@ -1345,6 +1345,409 @@ const htmlData = [
         </td>
       </tr>
     </table> 
+    <h2 style="margin-bottom:10px; margin-top:20px;">Media</h2> 
+
+    <h3 style="margin-top:10px;">&lt;img&gt; Tag</h3>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Display images on a web page.</li>
+      <li>Void (self-closing) element — no closing tag needed.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Important Attributes</h3>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+      <tr>
+        <th style="border:1px solid #ccc; padding:8px;">Attribute</th>
+        <th style="border:1px solid #ccc; padding:8px;">Purpose</th>
+        <th style="border:1px solid #ccc; padding:8px;">Example</th>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">src</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Image source URL (required)
+        </td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          &lt;img src="image.jpg" alt="..."&gt;
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">alt</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Alternative text for accessibility / if image fails to load
+        </td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          &lt;img src="logo.png" alt="Company Logo"&gt;
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">title</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Tooltip text on hover
+        </td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          &lt;img src="logo.png" alt="Logo" title="Company Logo"&gt;
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">width</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Width of the image in pixels (or CSS units)
+        </td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          &lt;img src="image.jpg" width="300"&gt;
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">height</td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          Height of the image in pixels (or CSS units)
+        </td>
+        <td style="border:1px solid #ccc; padding:8px;">
+          &lt;img src="image.jpg" height="200"&gt;
+        </td>
+      </tr>
+    </table>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;img
+      src="images/logo.png"
+      alt="Company Logo"
+      title="Company Logo"
+      width="200"
+      height="100"
+    &gt;
+    </pre>
+    </div>
+
+    <h4 style="margin-top:15px;">Output</h4>
+
+    <div class="output" style="margin-top:10px;">
+      <img
+        src="https://via.placeholder.com/200x100"
+        alt="Company Logo"
+        title="Company Logo"
+        width="200"
+        height="100"
+      >
+    </div> 
+
+    <h2 style="margin-top:15px;">Srcset (Responsive Images)</h2>
+
+    <p style="margin-top:10px;">
+    Modern web requires different image sizes for different devices. Using
+    <strong>srcset</strong> and <strong>sizes</strong>:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>srcset → multiple image sources with widths.</li>
+      <li>sizes → tells browser which image size to use at different viewport widths.</li>
+    </ul>
+
+    <h4 style="margin-top:15px;">Example</h4>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;img
+      src="small.jpg"
+      srcset="
+        small.jpg 480w,
+        medium.jpg 800w,
+        large.jpg 1200w
+      "
+      sizes="
+        (max-width:600px) 480px,
+        (max-width:900px) 800px,
+        1200px
+      "
+      alt="Nature"
+    &gt;
+    </pre>
+    </div> 
+
+    <h2>&lt;picture&gt;</h2>
+
+    <p style="margin-top:10px;">
+    Use <code>&lt;picture&gt;</code> when you need format fallback (WebP, JPEG, PNG) or different images for different screen sizes.
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>You can include as many &lt;source&gt; tags as you want, each with a different format or size.</li>
+      <li>&lt;img&gt; inside &lt;picture&gt; is required as a fallback.</li>
+      <li>The browser automatically chooses the first supported &lt;source&gt;.</li>
+    </ul>
+
+    <h4 style="margin-top:15px;">Example</h4>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;picture&gt;
+      &lt;source
+        srcset="image.webp"
+        type="image/webp"
+      &gt;
+
+      &lt;source
+        srcset="image.jpg"
+        type="image/jpeg"
+      &gt;
+
+      &lt;img
+        src="image.jpg"
+        alt="Nature"
+      &gt;
+    &lt;/picture&gt;
+    </pre>
+    </div> 
+
+    <h2>&lt;figure&gt; and &lt;figcaption&gt;</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Semantic container for images and their captions.</li>
+      <li>Improves accessibility and SEO.</li>
+      <li>&lt;figure&gt; → wraps image + caption</li>
+      <li>&lt;figcaption&gt; → describes the image</li>
+      <li>Can also wrap charts, videos, diagrams.</li>
+    </ul>
+
+    <h4 style="margin-top:15px;">Example</h4>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;figure&gt;
+      &lt;img
+        src="mountain.jpg"
+        alt="Mountain"
+        width="300"
+      &gt;
+
+      &lt;figcaption&gt;
+        Beautiful Mountain View
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+    </pre>
+    </div>
+
+    <h4 style="margin-top:15px;">Output</h4>
+
+    <div class="output" style="margin-top:10px;">
+      <figure>
+        <img
+          src="https://via.placeholder.com/300x180"
+          alt="Mountain"
+          width="300"
+        >
+        <figcaption>
+          Beautiful Mountain View
+        </figcaption>
+      </figure>
+    </div> 
+
+    <h2 style="margin-top:15px;">Responsive + Semantic</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;figure&gt;
+      &lt;picture&gt;
+        &lt;source
+          srcset="image.webp"
+          type="image/webp"
+        &gt;
+
+        &lt;img
+          src="image.jpg"
+          alt="Nature"
+          style="max-width:100%; height:auto;"
+        &gt;
+      &lt;/picture&gt;
+
+      &lt;figcaption&gt;
+        Responsive image with semantic caption.
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+    </pre>
+    </div>
+
+    <h2>Audio &amp; Video</h2>
+
+    <h3 style="margin-top:20px;">Audio &lt;audio&gt;</h3>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Used to embed sound files.</li>
+      <li>Can provide controls, autoplay, loop, and mute options.</li>
+    </ul>
+
+    <p style="margin-top:10px;">
+    &lt;source&gt; → allows multiple formats for browser compatibility.
+    </p>
+
+    <p>
+    controls → shows play/pause/volume buttons.
+    </p>
+
+    <h4 style="margin-top:15px;">Other attributes:</h4>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>autoplay → starts automatically (may be blocked by browsers)</li>
+      <li>loop → repeats audio</li>
+      <li>muted → starts muted</li>
+    </ul>
+
+    <h4 style="margin-top:15px;">Example</h4>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;audio controls&gt;
+      &lt;source
+        src="audio/song.mp3"
+        type="audio/mpeg"
+      &gt;
+
+      Your browser does not support the audio element.
+    &lt;/audio&gt;
+    </pre>
+    </div>
+
+    <h4 style="margin-top:15px;">Output</h4>
+
+    <div class="output" style="margin-top:10px;">
+      <audio controls>
+        <source src="audio/song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div> 
+
+    <h2 style="margin-top:15px;">Video &lt;video&gt;</h2>
+
+    <p>
+    Embeds video files directly in HTML.
+    </p>
+
+    <h4 style="margin-top:15px;">Attributes:</h4>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>controls → play/pause, volume, timeline</li>
+      <li>autoplay → play automatically</li>
+      <li>loop → repeat video</li>
+      <li>muted → start muted</li>
+      <li>poster → image shown before video plays</li>
+    </ul>
+
+    <h4 style="margin-top:15px;">Example</h4>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;video
+      controls
+      width="400"
+      poster="poster.jpg"
+    &gt;
+      &lt;source
+        src="video/demo.mp4"
+        type="video/mp4"
+      &gt;
+
+      Your browser does not support the video tag.
+    &lt;/video&gt;
+    </pre>
+    </div>
+
+    <h4 style="margin-top:15px;">Output</h4>
+
+    <div class="output" style="margin-top:10px;">
+      <video controls width="400">
+        <source src="video/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div> 
+
+    <h2 style="margin-top:15px;">Captions &amp; Subtitles &lt;track&gt;</h2>
+
+    <p>
+    &lt;track&gt; is used inside &lt;video&gt; to provide captions, subtitles, or descriptions.
+    </p>
+
+    <h4 style="margin-top:15px;">Attributes:</h4>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>kind → subtitles, captions, descriptions, chapters, metadata</li>
+      <li>srclang → language code (en, es)</li>
+      <li>label → user-friendly language name</li>
+    </ul>
+
+    <p style="margin-top:10px;">
+    Format → usually .vtt (WebVTT) stands for Web Video Text Tracks.
+    </p>
+
+    <h4 style="margin-top:15px;">Example</h4>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;video controls&gt;
+
+      &lt;source
+        src="movie.mp4"
+        type="video/mp4"
+      &gt;
+
+      &lt;track
+        src="captions.vtt"
+        kind="subtitles"
+        srclang="en"
+        label="English"
+      &gt;
+
+    &lt;/video&gt;
+    </pre>
+    </div> 
+
+    <h2 style="margin-top:15px;">&lt;iframe&gt;</h2>
+
+    <p>
+    &lt;iframe&gt; stands for Inline Frame — it allows you to embed another webpage or external content inside your current HTML document.
+    </p>
+
+    <p>
+    This creates a small window inside your page that displays another web page.
+    </p>
+
+    <h4 style="margin-top:15px;">Attributes:</h4>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>src → embed URL of the video</li>
+      <li>allowfullscreen → allows fullscreen mode</li>
+      <li>title → important for accessibility</li>
+    </ul>
+
+    <h4 style="margin-top:15px;">Example</h4>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/VIDEO_ID"
+      title="YouTube video player"
+      allowfullscreen&gt;
+    &lt;/iframe&gt;
+    </pre>
+    </div>
+
+    <h4 style="margin-top:15px;">Output</h4>
+
+    <div class="output" style="margin-top:10px;">
+      <p>
+        The above code embeds a YouTube video inside the webpage.
+      </p>
+    </div>
     `,
   },
   {
@@ -1761,18 +2164,1422 @@ const htmlData = [
   }, 
   {
     title: "Forms",
-    content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
+    content: `
+      <h2 style="margin-bottom:10px;">Forms &amp; User Input</h2>
+
+      <h3 style="margin-top:20px;">&lt;form&gt; Basics</h3>
+
+      <ul style="padding-left:20px; margin-top:10px;">
+        <li>
+          &lt;form&gt; is a container for user input controls (text fields, checkboxes, buttons, etc.)
+        </li>
+
+        <li>
+          Used to collect user data and submit it to a server.
+        </li>
+      </ul>
+
+      <p style="margin-top:10px;">
+        <strong>action</strong> → URL where the form data is sent.
+      </p>
+
+      <p>
+        <strong>method</strong> → HTTP method (GET or POST).
+      </p>
+
+      <h4 style="margin-top:20px;">Example</h4>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;form
+        action="/submit"
+        method="POST"
+      &gt;
+
+        &lt;label for="username"&gt;
+          Username
+        &lt;/label&gt;
+
+        &lt;input
+          type="text"
+          id="username"
+          name="username"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;label for="password"&gt;
+          Password
+        &lt;/label&gt;
+
+        &lt;input
+          type="password"
+          id="password"
+          name="password"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;button type="submit"&gt;
+          Submit
+        &lt;/button&gt;
+
+      &lt;/form&gt;
+      </pre>
+      </div>
+
+      <h4 style="margin-top:20px;">Output</h4>
+
+      <div class="output" style="margin-top:10px;">
+        <form>
+          <label for="demoUser">Username</label>
+          <br>
+
+          <input
+            type="text"
+            id="demoUser"
+            placeholder="Enter username"
+          >
+
+          <br><br>
+
+          <label for="demoPass">Password</label>
+          <br>
+
+          <input
+            type="password"
+            id="demoPass"
+            placeholder="Enter password"
+          >
+
+          <br><br>
+
+          <button type="button">
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <h2 style="margin-bottom:10px; margin-top:15px">Input Types</h2>
+
+      <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+        <tr>
+          <th style="border:1px solid #ccc; padding:8px;">Type</th>
+          <th style="border:1px solid #ccc; padding:8px;">Purpose</th>
+          <th style="border:1px solid #ccc; padding:8px;">Example</th>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">text</td>
+          <td style="border:1px solid #ccc; padding:8px;">Single-line text</td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="text" name="username"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">password</td>
+          <td style="border:1px solid #ccc; padding:8px;">Hidden text</td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="password" name="pwd"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">email</td>
+          <td style="border:1px solid #ccc; padding:8px;">Email address</td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="email" name="email"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">number</td>
+          <td style="border:1px solid #ccc; padding:8px;">Numeric input</td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="number" name="age" min="1" max="100"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">date</td>
+          <td style="border:1px solid #ccc; padding:8px;">Date picker</td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="date" name="dob"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">file</td>
+          <td style="border:1px solid #ccc; padding:8px;">File upload</td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="file" name="resume"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">checkbox</td>
+          <td style="border:1px solid #ccc; padding:8px;">Select one/more options</td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="checkbox" name="agree"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">radio</td>
+          <td style="border:1px solid #ccc; padding:8px;">Select one option</td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="radio" name="gender" value="male"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">url</td>
+          <td style="border:1px solid #ccc; padding:8px;">URL input</td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="url" name="website"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">tel</td>
+          <td style="border:1px solid #ccc; padding:8px;">Phone number</td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="tel" name="phone"&gt;
+          </td>
+        </tr>
+      </table>
+
+      <h3 style="margin-top:25px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;form&gt;
+
+        &lt;input
+          type="text"
+          placeholder="Username"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;input
+          type="password"
+          placeholder="Password"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;input
+          type="email"
+          placeholder="Email"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;input
+          type="number"
+          placeholder="Age"
+          min="1"
+          max="100"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;input
+          type="date"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;input
+          type="file"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;label&gt;
+          &lt;input type="checkbox"&gt;
+          I agree
+        &lt;/label&gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;label&gt;
+          &lt;input
+            type="radio"
+            name="gender"
+          &gt;
+          Male
+        &lt;/label&gt;
+
+        &lt;label&gt;
+          &lt;input
+            type="radio"
+            name="gender"
+          &gt;
+          Female
+        &lt;/label&gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;input
+          type="url"
+          placeholder="Website"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;input
+          type="tel"
+          placeholder="Phone Number"
+        &gt;
+
+      &lt;/form&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <form>
+
+      <input
+      type="text"
+      placeholder="Username"
+      >
+
+      <br><br>
+
+      <input
+      type="password"
+      placeholder="Password"
+      >
+
+      <br><br>
+
+      <input
+      type="email"
+      placeholder="Email"
+      >
+
+      <br><br>
+
+      <input
+      type="number"
+      placeholder="Age"
+      min="1"
+      max="100"
+      >
+
+      <br><br>
+
+      <input
+      type="date"
+      >
+
+      <br><br>
+
+      <input
+      type="file"
+      >
+
+      <br><br>
+
+      <label>
+      <input type="checkbox">
+      I agree
+      </label>
+
+      <br><br>
+
+      <label>
+      <input
+      type="radio"
+      name="gender"
+      >
+      Male
+      </label>
+
+      <label style="margin-left:15px;">
+      <input
+      type="radio"
+      name="gender"
+      >
+      Female
+      </label>
+
+      <br><br>
+
+      <input
+      type="url"
+      placeholder="Website"
+      >
+
+      <br><br>
+
+      <input
+      type="tel"
+      placeholder="Phone Number"
+      >
+
+      </form>
+
+      </div>
+
+      <h2 style="margin-bottom:10px; margin-top:20px">Labels &lt;label&gt;</h2>
+
+      <ul style="padding-left:20px; margin-top:10px;">
+        <li>Provides a clickable text for input fields.</li>
+        <li>Improves accessibility.</li>
+      </ul>
+
+      <p style="margin-top:10px;">
+      <strong>for</strong> attribute → connects label to input using input's <strong>id</strong>.
+      </p>
+
+      <h3 style="margin-top:20px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;form&gt;
+
+        &lt;label
+          for="username"
+        &gt;
+          Username
+        &lt;/label&gt;
+
+        &lt;br&gt;
+
+        &lt;input
+          type="text"
+          id="username"
+          name="username"
+        &gt;
+
+      &lt;/form&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <form>
+
+      <label for="demoUsername">
+      Username
+      </label>
+
+      <br>
+
+      <input
+      type="text"
+      id="demoUsername"
+      placeholder="Enter username"
+      >
+
+      </form>
+
+      </div> 
+
+      <h2 style="margin-bottom:10px; margin-top:20px">Grouping Inputs: &lt;fieldset&gt; &amp; &lt;legend&gt;</h2>
+
+      <ul style="padding-left:20px; margin-top:10px;">
+        <li>&lt;fieldset&gt; → groups related inputs visually and semantically.</li>
+        <li>&lt;legend&gt; → describes the group.</li>
+      </ul>
+
+      <h3 style="margin-top:20px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;form&gt;
+
+        &lt;fieldset&gt;
+
+          &lt;legend&gt;
+            Personal Information
+          &lt;/legend&gt;
+
+          &lt;label
+            for="name"
+          &gt;
+            Name
+          &lt;/label&gt;
+
+          &lt;br&gt;
+
+          &lt;input
+            type="text"
+            id="name"
+            name="name"
+          &gt;
+
+          &lt;br&gt;&lt;br&gt;
+
+          &lt;label
+            for="email"
+          &gt;
+            Email
+          &lt;/label&gt;
+
+          &lt;br&gt;
+
+          &lt;input
+            type="email"
+            id="email"
+            name="email"
+          &gt;
+
+        &lt;/fieldset&gt;
+
+      &lt;/form&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <form>
+
+      <fieldset>
+
+      <legend>
+      Personal Information
+      </legend>
+
+      <label for="demoName">
+      Name
+      </label>
+
+      <br>
+
+      <input
+      type="text"
+      id="demoName"
+      placeholder="Enter your name"
+      >
+
+      <br><br>
+
+      <label for="demoEmail">
+      Email
+      </label>
+
+      <br>
+
+      <input
+      type="email"
+      id="demoEmail"
+      placeholder="Enter your email"
+      >
+
+      </fieldset>
+
+      </form>
+
+      </div>
+
+      <h2 style="margin-bottom:10px; margin-top:20px">Dropdowns &lt;select&gt; &amp; &lt;option&gt;</h2>
+
+      <p style="margin-top:10px;">
+      &lt;optgroup&gt; → group options under a label.
+      </p>
+
+      <h3 style="margin-top:20px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;form&gt;
+
+        &lt;label
+          for="course"
+        &gt;
+          Select Course
+        &lt;/label&gt;
+
+        &lt;br&gt;
+
+        &lt;select
+          id="course"
+          name="course"
+        &gt;
+
+          &lt;optgroup
+            label="Frontend"
+          &gt;
+
+            &lt;option&gt;
+              HTML
+            &lt;/option&gt;
+
+            &lt;option&gt;
+              CSS
+            &lt;/option&gt;
+
+            &lt;option&gt;
+              JavaScript
+            &lt;/option&gt;
+
+          &lt;/optgroup&gt;
+
+          &lt;optgroup
+            label="Backend"
+          &gt;
+
+            &lt;option&gt;
+              Node.js
+            &lt;/option&gt;
+
+            &lt;option&gt;
+              Django
+            &lt;/option&gt;
+
+          &lt;/optgroup&gt;
+
+        &lt;/select&gt;
+
+      &lt;/form&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <form>
+
+      <label for="demoCourse">
+      Select Course
+      </label>
+
+      <br>
+
+      <select id="demoCourse">
+
+      <optgroup label="Frontend">
+      <option>HTML</option>
+      <option>CSS</option>
+      <option>JavaScript</option>
+      </optgroup>
+
+      <optgroup label="Backend">
+      <option>Node.js</option>
+      <option>Django</option>
+      </optgroup>
+
+      </select>
+
+      </form>
+
+      </div> 
+
+      <h2 style="margin-bottom:10px; margin-top:20px">Multi-line Text &lt;textarea&gt;</h2>
+
+      <h3 style="margin-top:20px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;form&gt;
+
+        &lt;label
+          for="message"
+        &gt;
+          Message
+        &lt;/label&gt;
+
+        &lt;br&gt;
+
+        &lt;textarea
+          id="message"
+          name="message"
+          rows="5"
+          cols="40"
+          placeholder="Enter your message"
+        &gt;
+        &lt;/textarea&gt;
+
+      &lt;/form&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <form>
+
+      <label for="demoMessage">
+      Message
+      </label>
+
+      <br>
+
+      <textarea
+      id="demoMessage"
+      rows="5"
+      cols="40"
+      placeholder="Enter your message"
+      ></textarea>
+
+      </form>
+
+      </div>
+
+      <h2 style="margin-bottom:10px; margin-top:20px">Form Attributes</h2>
+
+      <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+        <tr>
+          <th style="border:1px solid #ccc; padding:8px;">Attribute</th>
+          <th style="border:1px solid #ccc; padding:8px;">Purpose</th>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            action
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            URL to send form data
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            method
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            HTTP method (GET / POST)
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            autocomplete
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            Enable/disable browser autofill (on / off)
+
+            <br><br>
+
+            <code>
+            &lt;form action="/submit"
+            autocomplete="on"&gt;.....&lt;/form&gt;
+            </code>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            novalidate
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            Skip HTML5 validation on submit
+          </td>
+        </tr>
+
+      </table>
+
+      <h3 style="margin-top:25px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;form
+        action="/submit"
+        method="POST"
+        autocomplete="on"
+      &gt;
+
+        &lt;label
+          for="username"
+        &gt;
+          Username
+        &lt;/label&gt;
+
+        &lt;br&gt;
+
+        &lt;input
+          type="text"
+          id="username"
+          name="username"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;button
+          type="submit"
+        &gt;
+          Submit
+        &lt;/button&gt;
+
+      &lt;/form&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <form>
+
+      <label for="demoUser">
+      Username
+      </label>
+
+      <br>
+
+      <input
+      type="text"
+      id="demoUser"
+      placeholder="Enter Username"
+      >
+
+      <br><br>
+
+      <button>
+      Submit
+      </button>
+
+      </form>
+
+      </div> 
+
+      <h3 style="margin-bottom:10px; margin-top:20px">Example using <code>novalidate</code></h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;form
+        action="/submit"
+        method="POST"
+        novalidate
+      &gt;
+
+        &lt;input
+          type="email"
+          placeholder="Email"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;button
+          type="submit"
+        &gt;
+          Submit
+        &lt;/button&gt;
+
+      &lt;/form&gt;
+      </pre>
+      </div>
+
+      <p style="margin-top:15px;">
+      <strong>Note:</strong> When <code>novalidate</code> is used, the browser skips built-in HTML5 validation before submitting the form.
+      </p>
+
+      <h2 style="margin-bottom:10px;">Validation Attributes</h2>
+
+      <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+        <tr>
+          <th style="border:1px solid #ccc; padding:8px;">Attribute</th>
+          <th style="border:1px solid #ccc; padding:8px;">Purpose</th>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            required
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            Field must be filled
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            pattern
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            Regex pattern to match input
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            min / max
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            Min/max value for number/date
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            minlength / maxlength
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            Min/max character length
+          </td>
+        </tr>
+
+      </table>
+
+      <h3 style="margin-top:25px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;form&gt;
+
+        &lt;label
+          for="username"
+        &gt;
+          Username
+        &lt;/label&gt;
+
+        &lt;br&gt;
+
+        &lt;input
+          type="text"
+          id="username"
+          required
+          minlength="3"
+          maxlength="20"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;label
+          for="age"
+        &gt;
+          Age
+        &lt;/label&gt;
+
+        &lt;br&gt;
+
+        &lt;input
+          type="number"
+          id="age"
+          min="1"
+          max="100"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;label
+          for="email"
+        &gt;
+          Email
+        &lt;/label&gt;
+
+        &lt;br&gt;
+
+        &lt;input
+          type="email"
+          id="email"
+          required
+          pattern=".+@.+\..+"
+        &gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;button
+          type="submit"
+        &gt;
+          Submit
+        &lt;/button&gt;
+
+      &lt;/form&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <form>
+
+      <label for="demoUsername">
+      Username
+      </label>
+
+      <br>
+
+      <input
+      type="text"
+      id="demoUsername"
+      placeholder="Enter username"
+      required
+      minlength="3"
+      maxlength="20"
+      >
+
+      <br><br>
+
+      <label for="demoAge">
+      Age
+      </label>
+
+      <br>
+
+      <input
+      type="number"
+      id="demoAge"
+      placeholder="Enter age"
+      min="1"
+      max="100"
+      >
+
+      <br><br>
+
+      <label for="demoEmail">
+      Email
+      </label>
+
+      <br>
+
+      <input
+      type="email"
+      id="demoEmail"
+      placeholder="Enter email"
+      required
+      pattern=".+@.+\..+"
+      >
+
+      <br><br>
+
+      <button type="submit">
+      Submit
+      </button>
+
+      </form>
+
+      </div> 
+
+      <h3 style="margin-top:20px">Validation Attribute Examples</h3>
+
+      <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+        <tr>
+          <th style="border:1px solid #ccc; padding:8px;">Attribute</th>
+          <th style="border:1px solid #ccc; padding:8px;">Example</th>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            required
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="text" required&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            pattern
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="text" pattern="[A-Za-z]{3,}"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            min / max
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="number" min="1" max="100"&gt;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border:1px solid #ccc; padding:8px;">
+            minlength / maxlength
+          </td>
+          <td style="border:1px solid #ccc; padding:8px;">
+            &lt;input type="text" minlength="3" maxlength="20"&gt;
+          </td>
+        </tr>
+
+      </table>
+    `,
   },
   {
     title: "Semantic HTML",
+    content: ` 
+    <h2 style="margin-bottom:10px;">Semantic HTML</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Semantic HTML means using HTML elements that describe their meaning or purpose.</li>
+
+      <li>Non-semantic tags like &lt;div&gt; or &lt;span&gt; don't convey meaning.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Importance of Semantic HTML</h3>
+
+    <ol style="padding-left:20px; margin-top:10px;">
+
+      <li style="margin-bottom:15px;">
+        <strong>Accessibility</strong>
+
+        <p style="margin-top:8px;">
+          Screen readers and assistive devices can understand the page structure better.
+        </p>
+      </li>
+
+      <li style="margin-bottom:15px;">
+        <strong>SEO (Search Engine Optimization)</strong>
+
+        <p style="margin-top:8px;">
+          Search engines can index content accurately (what's main content, navigation, footer).
+        </p>
+      </li>
+
+      <li style="margin-bottom:15px;">
+        <strong>Maintainability</strong>
+
+        <p style="margin-top:8px;">
+          Easier for developers to read, maintain, and style.
+        </p>
+      </li>
+
+      <li>
+        <strong>Future-proofing</strong>
+
+        <p style="margin-top:8px;">
+          Browsers and tools can use semantic info to enhance UX.
+        </p>
+      </li>
+
+    </ol> 
+
+    <h2 style="margin-top:20px;">Structural Semantic Elements</h2>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+
+    <tr>
+    <th style="border:1px solid #ccc; padding:8px;">Element</th>
+    <th style="border:1px solid #ccc; padding:8px;">Purpose</th>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;header&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Page or section header, usually contains logo, nav, or title
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;nav&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Navigation links
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;main&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Main content of the document (unique per page)
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;article&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Self-contained content, like blog post or news article
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;section&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Thematically grouped content
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;aside&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Side content, like a sidebar, related info, or ads
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;footer&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Footer content of page or section, like contact info, copyright
+    </td>
+    </tr>
+
+    </table>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;body&gt;
+
+      &lt;header&gt;
+        Website Header
+      &lt;/header&gt;
+
+      &lt;nav&gt;
+        Home | About | Contact
+      &lt;/nav&gt;
+
+      &lt;main&gt;
+
+        &lt;section&gt;
+
+          &lt;article&gt;
+
+            HTML Semantic Elements
+
+          &lt;/article&gt;
+
+        &lt;/section&gt;
+
+        &lt;aside&gt;
+
+          Related Posts
+
+        &lt;/aside&gt;
+
+      &lt;/main&gt;
+
+      &lt;footer&gt;
+
+        © 2026 My Website
+
+      &lt;/footer&gt;
+
+    &lt;/body&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <header style="padding:10px;border:1px solid #ccc;">
+    Website Header
+    </header>
+
+    <nav style="padding:10px;border:1px solid #ccc;border-top:none;">
+    Home | About | Contact
+    </nav>
+
+    <main style="padding:10px;border:1px solid #ccc;border-top:none;">
+
+    <section style="margin-bottom:15px;">
+
+    <article style="padding:10px;border:1px solid #ddd;">
+    HTML Semantic Elements
+    </article>
+
+    </section>
+
+    <aside style="padding:10px;border:1px solid #ddd;">
+    Related Posts
+    </aside>
+
+    </main>
+
+    <footer style="padding:10px;border:1px solid #ccc;border-top:none;">
+    © 2026 My Website
+    </footer>
+
+    </div> 
+
+    <h2 style="margin-top:20px;">Inline Semantic Elements</h2>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+
+    <tr>
+    <th style="border:1px solid #ccc; padding:8px;">Element</th>
+    <th style="border:1px solid #ccc; padding:8px;">Purpose</th>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;abbr&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Abbreviation or acronym
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;address&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Contact info (author or company)
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;time&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Date/time info, machine-readable if needed
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;code&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Computer code snippet
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;kbd&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    User keyboard input
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;samp&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Sample output from a program or system
+    </td>
+    </tr>
+
+    </table>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;p&gt;
+
+    &lt;abbr title="HyperText Markup Language"&gt;
+    HTML
+    &lt;/abbr&gt;
+
+    is a markup language.
+
+    &lt;/p&gt;
+
+    &lt;address&gt;
+    Email: info@example.com
+    &lt;/address&gt;
+
+    &lt;p&gt;
+
+    Meeting on
+
+    &lt;time datetime="2026-06-27"&gt;
+    27 June 2026
+    &lt;/time&gt;
+
+    &lt;/p&gt;
+
+    &lt;p&gt;
+
+    Use
+
+    &lt;code&gt;
+    console.log()
+    &lt;/code&gt;
+
+    to print output.
+
+    &lt;/p&gt;
+
+    &lt;p&gt;
+
+    Press
+
+    &lt;kbd&gt;
+    Ctrl + C
+    &lt;/kbd&gt;
+
+    to copy.
+
+    &lt;/p&gt;
+
+    &lt;p&gt;
+
+    Output:
+
+    &lt;samp&gt;
+    Hello World
+    &lt;/samp&gt;
+
+    &lt;/p&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <p>
+    <abbr title="HyperText Markup Language">HTML</abbr>
+    is a markup language.
+    </p>
+
+    <address>
+    Email: info@example.com
+    </address>
+
+    <p>
+    Meeting on
+    <time datetime="2026-06-27">27 June 2026</time>
+    </p>
+
+    <p>
+    Use <code>console.log()</code> to print output.
+    </p>
+
+    <p>
+    Press <kbd>Ctrl + C</kbd> to copy.
+    </p>
+
+    <p>
+    Output:
+    <samp>Hello World</samp>
+    </p>
+
+    </div>
+    `,
+  },
+  {
+    title: "Advanced Feature",
     content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
   },
   {
-    title: "Advanced HTML",
+    title: "Global Attribute",
     content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
   },
   {
-    title: "SEO & Best Practices",
+    title: "Accessibility(a11y)",
+    content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
+  },
+  {
+    title: "HTML APIs & Integrations",
     content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
   },
 ];
