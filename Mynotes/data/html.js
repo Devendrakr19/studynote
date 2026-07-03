@@ -290,7 +290,7 @@ const htmlData = [
           <strong>Purpose:</strong> Contains metadata about the document.
         </p>
 
-        <p style="margin-bottom:5px;>
+        <p style="margin-bottom:5px;">
           <strong>Metadata</strong> is information not directly visible to users but used by browsers, search engines, and tools.
         </p>
 
@@ -3566,17 +3566,2280 @@ const htmlData = [
     </div>
     `,
   },
+    {
+    title: "Global Attribute",
+    content: `
+    <h2 style="margin-bottom:10px;">id Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Purpose: Uniquely identifies a single element in the document.</li>
+      <li>Value must be unique (only one element can have a given id).</li>
+      <li>Commonly used for JavaScript targeting, CSS styling, and anchor linking.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;h1 id="title"&gt;
+      Welcome to HTML
+    &lt;/h1&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <h1 id="title">
+      Welcome to HTML
+    </h1>
+
+    </div>
+
+    <h2 style="margin-top:30px;">class Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Used to group elements under a common name.</li>
+      <li>Multiple elements can share the same class.</li>
+      <li>A single element can also have multiple classes.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;p class="note"&gt;
+      HTML is easy to learn.
+    &lt;/p&gt;
+
+    &lt;p class="note"&gt;
+      CSS is used for styling.
+    &lt;/p&gt;
+
+    &lt;button class="btn primary"&gt;
+      Submit
+    &lt;/button&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <p class="note">
+    HTML is easy to learn.
+    </p>
+
+    <p class="note">
+    CSS is used for styling.
+    </p>
+
+    <button>
+    Submit
+    </button>
+
+    </div>
+
+    <h2 style="margin-top:30px;">title Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Used to provide extra information about an element.</li>
+      <li>Shows as a tooltip when the user hovers over the element.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;button
+    title="Click to submit the form"
+    &gt;
+    Submit
+    &lt;/button&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <button title="Click to submit the form">
+    Submit
+    </button>
+
+    <p style="margin-top:10px;">
+    Hover over the button to see the tooltip.
+    </p>
+
+    </div>
+
+    <h2 style="margin-top:30px;">style Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Used to apply inline CSS styles directly to an element.</li>
+      <li>Syntax: <strong>style="property: value;"</strong>.</li>
+      <li>Generally used for quick styling, but CSS files or &lt;style&gt; tags are preferred for maintainability.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;p
+    style="
+    color:blue;
+    font-size:20px;
+    font-weight:bold;
+    "
+    &gt;
+    Hello HTML
+    &lt;/p&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <p
+    style="
+    color:blue;
+    font-size:20px;
+    font-weight:bold;
+    "
+    >
+    Hello HTML
+    </p>
+    </div>
+
+    <h2 style="margin-bottom:10px;">hidden Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Used to hide an element from the page (it will not be displayed).</li>
+      <li>It's a boolean attribute → no value needed (<strong>hidden</strong> alone means true).</li>
+      <li>Commonly used to toggle visibility dynamically using JavaScript.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;p hidden&gt;
+      You cannot see this text.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      This text is visible.
+    &lt;/p&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <p hidden>
+    You cannot see this text.
+    </p>
+
+    <p>
+    This text is visible.
+    </p>
+
+    </div>
+
+    <h2 style="margin-top:30px;">lang Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Specifies the language of the element's content.</li>
+      <li>Important for screen readers, translation tools, and SEO.</li>
+      <li>Usually placed in the <strong>&lt;html&gt;</strong> tag.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;html lang="en"&gt;
+
+    &lt;p&gt;
+      Welcome to HTML.
+    &lt;/p&gt;
+
+    &lt;/html&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <p>
+    Welcome to HTML.
+    </p>
+
+    </div>
+
+    <h2 style="margin-top:30px;">dir Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Defines the text direction.</li>
+    </ul>
+
+    <p><strong>Common values:</strong></p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>ltr</strong> → Left to right (default for most languages like English)</li>
+      <li><strong>rtl</strong> → Right to left (for Arabic, Hebrew, etc.)</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;p dir="ltr"&gt;
+      Hello World
+    &lt;/p&gt;
+
+    &lt;p dir="rtl"&gt;
+      مرحبا بالعالم
+    &lt;/p&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <p dir="ltr">
+    Hello World
+    </p>
+
+    <p dir="rtl">
+    مرحبا بالعالم
+    </p>
+
+    </div>
+
+    <h2 style="margin-top:30px;">tabindex Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Controls the order of keyboard navigation (when pressing the Tab key).</li>
+      <li>Works on any focusable element (like links, buttons, inputs, etc.).</li>
+    </ul>
+
+    <p><strong>Values:</strong></p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>0</strong> → element is focusable in natural order.</li>
+      <li><strong>Positive number (e.g., 1, 2, 3)</strong> → defines custom tab order.</li>
+      <li><strong>-1</strong> → element is focusable by JavaScript, but skipped in Tab order.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;button tabindex="2"&gt;
+      Second
+    &lt;/button&gt;
+
+    &lt;button tabindex="1"&gt;
+      First
+    &lt;/button&gt;
+
+    &lt;button tabindex="3"&gt;
+      Third
+    &lt;/button&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <button tabindex="2">
+    Second
+    </button>
+
+    <button tabindex="1">
+    First
+    </button>
+
+    <button tabindex="3">
+    Third
+    </button>
+
+    <p style="margin-top:10px;">
+    Press the <strong>Tab</strong> key to move focus in the order:
+    <strong>First → Second → Third</strong>.
+    </p>
+
+    </div>
+
+    <h2 style="margin-top:30px;">contenteditable Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Makes an element's text editable directly in the browser.</li>
+      <li>Boolean attribute (<strong>true</strong> or <strong>false</strong>).</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;p
+    contenteditable="true"
+    &gt;
+    Click here and edit this text.
+    &lt;/p&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <p
+    contenteditable="true"
+    style="
+    border:1px solid #ccc;
+    padding:10px;
+    border-radius:5px;
+    "
+    >
+    Click here and edit this text.
+    </p>
+
+    <p style="margin-top:10px;">
+    Try typing inside the paragraph.
+    </p>
+
+    </div>
+
+    <h2 style="margin-bottom:10px;">draggable Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Specifies whether an element is draggable (can be dragged using mouse).</li>
+      <li>Boolean attribute (<strong>true</strong> or <strong>false</strong>).</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;img
+    src="logo.png"
+    alt="Logo"
+    draggable="true"
+    width="120"
+    &gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <div
+    draggable="true"
+    style="
+    display:inline-block;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    cursor:grab;
+    background:#f5f5f5;
+    "
+    >
+    📦 Drag Me
+    </div>
+
+    <p style="margin-top:10px;">
+    Try dragging the box.
+    </p>
+
+    </div>
+
+    <h2 style="margin-top:30px;">data-* Attributes (Custom Data Attributes)</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Used to store custom data inside HTML elements.</li>
+      <li>These are not shown to users but accessible in JavaScript.</li>
+      <li>The syntax is: <strong>data-key="value"</strong></li>
+      <li><strong>key</strong> can be any name you want.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;button
+    data-id="101"
+    data-course="HTML"
+    &gt;
+    View Course
+    &lt;/button&gt;
+
+    &lt;script&gt;
+
+    const button =
+    document.querySelector("button");
+
+    console.log(
+    button.dataset.id
+    );
+
+    console.log(
+    button.dataset.course
+    );
+
+    &lt;/script&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <button>
+    View Course
+    </button>
+
+    <p style="margin-top:10px;">
+    JavaScript can access:
+    <strong>101</strong> and
+    <strong>HTML</strong>.
+    </p>
+
+    </div>
+
+    <h2 style="margin-top:30px;">spellcheck Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Tells the browser whether to check spelling or grammar in editable text.</li>
+      <li>Works with <strong>&lt;input&gt;</strong>, <strong>&lt;textarea&gt;</strong>, and elements with <strong>contenteditable="true"</strong>.</li>
+    </ul>
+
+    <p><strong>Values:</strong></p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>true</strong> → Enable spell checking</li>
+      <li><strong>false</strong> → Disable spell checking</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;textarea
+    spellcheck="true"
+    rows="4"
+    cols="30"
+    &gt;
+    Type your text here...
+    &lt;/textarea&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <textarea
+    spellcheck="true"
+    rows="4"
+    cols="30"
+    >
+    Type your text here...
+    </textarea>
+
+    <p style="margin-top:10px;">
+    If you type a misspelled word, the browser may underline it.
+    </p>
+
+    </div>
+
+    <h2 style="margin-top:30px;">translate Attribute</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Controls whether an element's text should be translated by translation tools (like Google Translate).</li>
+    </ul>
+
+    <p><strong>Values:</strong></p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>yes</strong> → allow translation</li>
+      <li><strong>no</strong> → prevent translation</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;p translate="yes"&gt;
+    Welcome to HTML.
+    &lt;/p&gt;
+
+    &lt;p translate="no"&gt;
+    OpenAI
+    &lt;/p&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <p translate="yes">
+    Welcome to HTML.
+    </p>
+
+    <p translate="no">
+    OpenAI
+    </p>
+
+    <p style="margin-top:10px;">
+    Translation tools can translate the first paragraph but should leave <strong>OpenAI</strong> unchanged.
+    </p>
+
+    </div>
+    `,
+  },
+    {
+    title: "Accessibility(a11y)",
+    content: `
+      <h2 style="margin-bottom:10px;">Accessibility (a11y) in HTML</h2>
+
+      <p style="margin-top:10px;">
+      <strong>a11y</strong> = shorthand for <strong>"accessibility"</strong> (11 letters between "a" and "y").
+      </p>
+
+      <p>
+      It means designing web pages that everyone can use — including people with disabilities,
+      screen readers, or keyboard-only navigation.
+      </p>
+
+      <h2 style="margin-top:30px;">1. ARIA Roles</h2>
+
+      <p style="margin-top:10px;">
+      ARIA (Accessible Rich Internet Applications) provides attributes that define roles, states, and
+      properties for better screen reader support.
+      </p>
+
+      <h3 style="margin-top:20px;">Common ARIA Roles</h3>
+
+      <table
+        border="1"
+        style="
+          border-collapse:collapse;
+          margin-top:10px;
+          width:100%;
+          text-align:center;
+        "
+      >
+
+        <tr>
+          <th style="padding:10px;">Role</th>
+          <th style="padding:10px;">Meaning</th>
+        </tr>
+
+        <tr>
+          <td style="padding:10px;"><code>role="button"</code></td>
+          <td style="padding:10px;">Tells assistive technology it acts like a button.</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px;"><code>role="alert"</code></td>
+          <td style="padding:10px;">Announces important messages immediately.</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px;"><code>role="dialog"</code></td>
+          <td style="padding:10px;">Marks a popup or modal dialog.</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px;"><code>role="navigation"</code></td>
+          <td style="padding:10px;">Defines a navigation section.</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px;"><code>role="banner"</code></td>
+          <td style="padding:10px;">Header section of a page.</td>
+        </tr>
+
+      </table>
+
+      <p style="margin-top:15px;">
+      <strong>Use ARIA only when semantic HTML can't express meaning.</strong>
+      </p>
+
+      <p>
+      For example, prefer <code>&lt;button&gt;</code> instead of
+      <code>&lt;div role="button"&gt;</code>.
+      </p>
+
+      <h3 style="margin-top:20px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;div
+      role="button"
+      tabindex="0"
+      &gt;
+      Save
+      &lt;/div&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <div
+      role="button"
+      tabindex="0"
+      style="
+      display:inline-block;
+      padding:10px 20px;
+      background:#007bff;
+      color:white;
+      border-radius:5px;
+      cursor:pointer;
+      "
+      >
+      Save
+      </div>
+
+      </div>
+
+      <h2 style="margin-top:30px;">2. alt Text for Images</h2>
+
+      <ul style="padding-left:20px; margin-top:10px;">
+      <li>The <strong>alt</strong> attribute gives a text alternative for images.</li>
+      <li>Screen readers read this when users can't see the image.</li>
+      <li>It also appears if the image fails to load.</li>
+      </ul>
+
+      <h3 style="margin-top:20px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;img
+      src="logo.png"
+      alt="Company Logo"
+      &gt;
+      </pre>
+      </div>
+
+      <h2 style="margin-top:30px;">3. Labels for Forms</h2>
+
+      <ul style="padding-left:20px; margin-top:10px;">
+      <li>Every input should have a label describing its purpose.</li>
+      <li>Helps both sighted users and screen readers.</li>
+      </ul>
+
+      <h3 style="margin-top:20px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;label for="email"&gt;
+      Email
+      &lt;/label&gt;
+
+      &lt;input
+      type="email"
+      id="email"
+      &gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <label for="demoEmail">
+      Email
+      </label>
+
+      <br><br>
+
+      <input
+      type="email"
+      id="demoEmail"
+      placeholder="Enter email"
+      >
+
+      </div>
+
+      <h2 style="margin-top:30px;">4. Keyboard Navigation (tabindex)</h2>
+
+      <ul style="padding-left:20px; margin-top:10px;">
+      <li>Allows users to navigate using the keyboard (Tab key).</li>
+      <li>Default focusable elements:
+      <strong>&lt;a&gt;</strong>,
+      <strong>&lt;button&gt;</strong>,
+      <strong>&lt;input&gt;</strong>, etc.
+      </li>
+      <li>Use <strong>tabindex</strong> to include custom focusable elements.</li>
+      </ul>
+
+      <h3 style="margin-top:20px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;div
+      tabindex="0"
+      &gt;
+      Focusable Box
+      &lt;/div&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <div
+      tabindex="0"
+      style="
+      border:1px solid #ccc;
+      padding:12px;
+      border-radius:5px;
+      display:inline-block;
+      "
+      >
+      Focusable Box
+      </div>
+
+      <p style="margin-top:10px;">
+      Press the <strong>Tab</strong> key to focus this box.
+      </p>
+
+      </div>
+
+      <h2 style="margin-top:30px;">5. Screen Reader Compatibility</h2>
+
+      <ul style="padding-left:20px; margin-top:10px;">
+      <li>Screen readers read semantic HTML, not visuals.</li>
+      <li>Use proper elements:
+      <strong>&lt;header&gt;</strong>,
+      <strong>&lt;nav&gt;</strong>,
+      <strong>&lt;main&gt;</strong>,
+      <strong>&lt;footer&gt;</strong>.
+      </li>
+      <li>Add ARIA attributes for dynamic content.</li>
+      </ul>
+
+      <h3 style="margin-top:20px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;header&gt;
+      Header
+      &lt;/header&gt;
+
+      &lt;nav&gt;
+      Navigation
+      &lt;/nav&gt;
+
+      &lt;main&gt;
+      Main Content
+      &lt;/main&gt;
+
+      &lt;footer&gt;
+      Footer
+      &lt;/footer&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <header class="code" style="padding:10px;">
+      Header
+      </header>
+
+      <nav class="code" style="padding:10px; margin-top:5px;">
+      Navigation
+      </nav>
+
+      <main class="code" style="padding:10px; margin-top:5px;">
+      Main Content
+      </main>
+
+      <footer class="code" style="padding:10px; margin-top:5px;">
+      Footer
+      </footer>
+
+      </div>
+    `,
+  },
   {
     title: "Advanced Feature",
-    content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
-  },
-  {
-    title: "Global Attribute",
-    content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
-  },
-  {
-    title: "Accessibility(a11y)",
-    content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
+    content: `
+    <h2 style="margin-bottom:10px;">&lt;canvas&gt;</h2>
+
+    <p style="margin-top:10px;">
+    The &lt;canvas&gt; tag in HTML is used to draw graphics. It provides an empty drawing area in your webpage that you can manipulate using JavaScript. such as:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Shapes (lines, circles, rectangles)</li>
+      <li>Images</li>
+      <li>Animations</li>
+      <li>Charts</li>
+      <li>Games</li>
+    </ul>
+
+    <div class="code" style="margin-top:15px;">
+    <pre>
+    &lt;canvas
+      id="myCanvas"
+      width="300"
+      height="200"
+    &gt;
+    &lt;/canvas&gt;
+    </pre>
+    </div>
+
+    <p style="margin-top:15px;">
+    This creates a blank canvas area of 300×200 pixels.
+    </p>
+
+    <p>
+    Default size (if not specified): 300×150 pixels
+    </p>
+
+    <p>
+    By itself, &lt;canvas&gt; shows nothing — you must use JavaScript to draw inside it.
+    </p>
+
+    <h3>Example: Drawing a Rectangle</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;canvas
+      id="myCanvas"
+      width="300"
+      height="200"
+      style="border:1px solid #000;"
+    &gt;
+    &lt;/canvas&gt;
+
+    &lt;script&gt;
+
+    const canvas =
+    document.getElementById("myCanvas");
+
+    const ctx =
+    canvas.getContext("2d");
+
+    ctx.fillRect(
+      50,
+      50,
+      150,
+      80
+    );
+
+    &lt;/script&gt;
+    </pre>
+    </div>
+
+    <p style="margin-top:10px;">
+    A rectangle will be drawn at position (50, 50) with a width of 150px and a height of 80px using JavaScript.
+    </p>
+
+    </div>
+
+    <h3 style="margin-top:20px;">Canvas Drawing Methods</h3>
+
+    <p style="margin-top:10px;">
+    You get an object that gives you drawing methods like:
+    </p>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+
+    <tr>
+    <th style="border:1px solid #ccc; padding:8px;">Method</th>
+    <th style="border:1px solid #ccc; padding:8px;">Description</th>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    fillRect(x, y, w, h)
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Fills a rectangle
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    strokeRect(x, y, w, h)
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Draws only the outline
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    clearRect(x, y, w, h)
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Clears part of the canvas
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    beginPath() / moveTo() / lineTo()
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Draw lines
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    arc(x, y, r, start, end)
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Draw circles or arcs
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    fillText(text, x, y)
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Draw text
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    drawImage(img, x, y)
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Draw image
+    </td>
+    </tr>
+
+    </table>
+
+    <h3 style="margin-top:25px;">Example: Draw a Circle</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;canvas
+    id="circleCanvas"
+    width="300"
+    height="200"
+    style="border:1px solid #000;"
+    &gt;
+    &lt;/canvas&gt;
+
+    &lt;script&gt;
+
+    const canvas =
+    document.getElementById("circleCanvas");
+
+    const ctx =
+    canvas.getContext("2d");
+
+    ctx.beginPath();
+
+    ctx.arc(
+    150,
+    100,
+    50,
+    0,
+    2 * Math.PI
+    );
+
+    ctx.fill();
+
+    &lt;/script&gt;
+    </pre>
+    </div>
+
+    <p style="margin-top:10px;">
+    A filled circle is drawn at the center of the canvas.
+    </p>
+
+    </div>
+
+    <h3 style="margin-top:25px;">Example: Draw Image on Canvas</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;canvas
+    id="imageCanvas"
+    width="300"
+    height="200"
+    &gt;
+    &lt;/canvas&gt;
+
+    &lt;script&gt;
+
+    const canvas =
+    document.getElementById("imageCanvas");
+
+    const ctx =
+    canvas.getContext("2d");
+
+    const img =
+    new Image();
+
+    img.src = "image.jpg";
+
+    img.onload = function(){
+
+    ctx.drawImage(
+    img,
+    20,
+    20,
+    150,
+    100
+    );
+
+    };
+
+    &lt;/script&gt;
+    </pre>
+    </div>
+
+    <p style="margin-top:10px;">
+    The image <strong>image.jpg</strong> is drawn on the canvas after it finishes loading.
+    </p>
+
+    </div>
+
+    <h3 style="margin-top:25px;">Example: Simple Animation</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;canvas
+    id="animationCanvas"
+    width="300"
+    height="100"
+    &gt;
+    &lt;/canvas&gt;
+
+    &lt;script&gt;
+
+    const canvas =
+    document.getElementById("animationCanvas");
+
+    const ctx =
+    canvas.getContext("2d");
+
+    let x = 0;
+
+    function animate(){
+
+    ctx.clearRect(
+    0,
+    0,
+    300,
+    100
+    );
+
+    ctx.fillRect(
+    x,
+    30,
+    50,
+    40
+    );
+
+    x++;
+
+    requestAnimationFrame(
+    animate
+    );
+
+    }
+
+    animate();
+
+    &lt;/script&gt;
+    </pre>
+    </div>
+
+    <p style="margin-top:10px;">
+    A rectangle continuously moves from left to right across the canvas.
+    </p>
+
+    </div>
+
+    <h3 style="margin-top:25px;">CSS Animation vs Canvas Animation</h3>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+
+    <tr>
+    <th style="border:1px solid #ccc; padding:8px;">Feature</th>
+    <th style="border:1px solid #ccc; padding:8px;">CSS Animation</th>
+    <th style="border:1px solid #ccc; padding:8px;">Canvas Animation</th>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">Type</td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Style-based animation (changes CSS properties)
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Code-based animation (draws each frame manually)
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">Control</td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Limited — mainly movement, fade, rotation, scale
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Full control — physics, collisions, particles, dynamic drawing
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">Elements</td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Animates DOM elements (like &lt;div&gt;, &lt;img&gt;, &lt;p&gt;)
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Animates pixels inside a drawing area (&lt;canvas&gt;)
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">Performance</td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Great for UI transitions
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Better for heavy graphics, games, or visual effects
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">Ease of Use</td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Simple (keyframes or transitions)
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    More complex (requires JavaScript coding)
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">Interactivity</td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Hard to control by user input (e.g., mouse movement)
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Easy — you can react to user input dynamically
+    </td>
+    </tr>
+    </table>
+
+    <h2 style="margin-bottom:10px; margin-top:20px;">&lt;svg&gt;</h2>
+
+    <p style="margin-top:10px;">
+    &lt;svg&gt; stands for <strong>Scalable Vector Graphics</strong>.
+    </p>
+
+    <p>
+    It's an XML-based language used to draw shapes, text, and images directly in HTML, using vector graphics instead of pixels.
+    </p>
+
+    <p>
+    That means it uses mathematical paths (lines, curves, points) — so images are infinitely scalable (no blur when zoomed).
+    </p>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;svg
+    width="200"
+    height="200"
+    &gt;
+
+      &lt;circle
+        cx="100"
+        cy="100"
+        r="70"
+        fill="blue"
+        stroke="black"
+        stroke-width="3"
+      /&gt;
+
+    &lt;/svg&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <svg width="200" height="200">
+      <circle
+        cx="100"
+        cy="100"
+        r="70"
+        fill="blue"
+        stroke="black"
+        stroke-width="3">
+      </circle>
+    </svg>
+
+    </div>
+
+    <p style="margin-top:20px;">
+    This draws a blue circle with a black border inside the page.
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>cx</strong>, <strong>cy</strong> → Center coordinates</li>
+      <li><strong>r</strong> → Radius</li>
+      <li><strong>fill</strong> → Inside color</li>
+      <li><strong>stroke</strong> → Border color</li>
+      <li><strong>stroke-width</strong> → Border thickness</li>
+    </ul>
+
+    <h3 style="margin-top:25px;">Common SVG Elements</h3>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+
+    <tr>
+    <th style="border:1px solid #ccc; padding:8px;">Element</th>
+    <th style="border:1px solid #ccc; padding:8px;">Description</th>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;circle&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Draws a circle
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;rect&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Draws a rectangle
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;line&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Draws a straight line
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;ellipse&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Like a stretched circle
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;polygon&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Multi-sided shape
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;path&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Complex custom shapes (most powerful)
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;text&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Adds text inside SVG
+    </td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">
+    &lt;g&gt;
+    </td>
+    <td style="border:1px solid #ccc; padding:8px;">
+    Groups multiple shapes together
+    </td>
+    </tr>
+    </table>
+    
+    <h2 style="margin-bottom:10px; margin-top:20px;">&lt;rect&gt; — Rectangle</h2>
+
+    <p style="margin-top:10px;">
+    Attributes:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>x, y</strong> → top-left corner position</li>
+      <li><strong>width, height</strong> → size</li>
+      <li><strong>fill</strong> → color inside</li>
+      <li><strong>stroke</strong> → border color</li>
+      <li><strong>stroke-width</strong> → border thickness</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;svg
+    width="250"
+    height="150"
+    &gt;
+
+      &lt;rect
+        x="40"
+        y="30"
+        width="150"
+        height="80"
+        fill="skyblue"
+        stroke="black"
+        stroke-width="3"
+      /&gt;
+
+    &lt;/svg&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <svg width="250" height="150">
+      <rect
+        x="40"
+        y="30"
+        width="150"
+        height="80"
+        fill="skyblue"
+        stroke="black"
+        stroke-width="3">
+      </rect>
+    </svg>
+
+    </div>
+
+    <h2 style="margin-top:30px;">&lt;ellipse&gt; — Oval or Stretched Circle</h2>
+
+    <p style="margin-top:10px;">
+    Attributes:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>cx, cy</strong> → center</li>
+      <li><strong>rx</strong> → horizontal radius</li>
+      <li><strong>ry</strong> → vertical radius</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;svg
+    width="250"
+    height="150"
+    &gt;
+
+      &lt;ellipse
+        cx="125"
+        cy="75"
+        rx="80"
+        ry="45"
+        fill="orange"
+        stroke="black"
+        stroke-width="3"
+      /&gt;
+
+    &lt;/svg&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <svg width="250" height="150">
+      <ellipse
+        cx="125"
+        cy="75"
+        rx="80"
+        ry="45"
+        fill="orange"
+        stroke="black"
+        stroke-width="3">
+      </ellipse>
+    </svg>
+
+    </div>
+
+    <h2 style="margin-top:30px;">&lt;line&gt; — Straight Line</h2>
+
+    <p style="margin-top:10px;">
+    Attributes:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>x1, y1</strong> → start point</li>
+      <li><strong>x2, y2</strong> → end point</li>
+      <li><strong>stroke</strong> → line color</li>
+      <li><strong>stroke-width</strong> → thickness</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;svg
+    width="250"
+    height="150"
+    &gt;
+
+      &lt;line
+        x1="20"
+        y1="20"
+        x2="220"
+        y2="120"
+        stroke="red"
+        stroke-width="4"
+      /&gt;
+
+    &lt;/svg&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <svg width="250" height="150">
+      <line
+        x1="20"
+        y1="20"
+        x2="220"
+        y2="120"
+        stroke="red"
+        stroke-width="4">
+      </line>
+    </svg>
+    </div>
+
+    <h2 style="margin-bottom:10px; margin-top:20px;">&lt;polygon&gt; — Multi-sided Shape (Closed)</h2>
+
+    <p style="margin-top:10px;">
+    Attributes:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>points</strong> → list of x,y coordinates (automatically connects last to first)</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;svg
+    width="250"
+    height="180"
+    &gt;
+
+      &lt;polygon
+        points="125,20 220,150 30,150"
+        fill="gold"
+        stroke="black"
+        stroke-width="3"
+      /&gt;
+
+    &lt;/svg&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <svg width="250" height="180">
+      <polygon
+        points="125,20 220,150 30,150"
+        fill="gold"
+        stroke="black"
+        stroke-width="3">
+      </polygon>
+    </svg>
+
+    </div>
+
+    <h2 style="margin-top:30px;">&lt;polyline&gt; — Multi-line (Open)</h2>
+
+    <p style="margin-top:10px;">
+    Similar to &lt;polygon&gt;, but doesn't close automatically.
+    </p>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;svg
+    width="250"
+    height="180"
+    &gt;
+
+      &lt;polyline
+        points="20,120 80,40 140,120 200,40"
+        fill="none"
+        stroke="blue"
+        stroke-width="4"
+      /&gt;
+
+    &lt;/svg&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <svg width="250" height="180">
+      <polyline
+        points="20,120 80,40 140,120 200,40"
+        fill="none"
+        stroke="blue"
+        stroke-width="4">
+      </polyline>
+    </svg>
+
+    </div>
+
+    <h2 style="margin-top:30px;">&lt;path&gt; — Custom Complex Shape</h2>
+
+    <p style="margin-top:10px;">
+    Explanation:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>M</strong> = Move to (start position)</li>
+      <li><strong>Q</strong> = Quadratic curve (smooth curve)</li>
+      <li>
+        You can use many commands:
+        <ul style="padding-left:20px; margin-top:8px;">
+          <li>M (move), L (line), C (curve), Z (close path), etc.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;svg
+    width="250"
+    height="180"
+    &gt;
+
+      &lt;path
+        d="M50 120 Q125 20 200 120"
+        fill="none"
+        stroke="red"
+        stroke-width="3"
+      /&gt;
+
+    &lt;/svg&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <svg width="250" height="180">
+      <path
+        d="M50 120 Q125 20 200 120"
+        fill="none"
+        stroke="red"
+        stroke-width="3">
+      </path>
+    </svg>
+
+    </div>
+
+    <h2 style="margin-top:30px;">&lt;text&gt; — Text in SVG</h2>
+
+    <p style="margin-top:10px;">
+    Attributes:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li><strong>x, y</strong> → position</li>
+      <li><strong>font-size, fill</strong> → text style</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;svg
+    width="250"
+    height="100"
+    &gt;
+
+      &lt;text
+        x="30"
+        y="60"
+        font-size="28"
+        fill="green"
+      &gt;
+        Hello SVG
+      &lt;/text&gt;
+
+    &lt;/svg&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <svg width="250" height="100">
+      <text
+        x="30"
+        y="60"
+        font-size="28"
+        fill="green">
+        Hello SVG
+      </text>
+    </svg>
+
+    </div>
+
+    <h2 style="margin-top:30px;">&lt;g&gt; — Grouping Elements</h2>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;svg
+    width="220"
+    height="180"
+    &gt;
+
+      &lt;g&gt;
+
+        &lt;circle
+          cx="110"
+          cy="60"
+          r="35"
+          fill="orange"
+        /&gt;
+
+        &lt;rect
+          x="75"
+          y="105"
+          width="70"
+          height="40"
+          fill="steelblue"
+        /&gt;
+
+      &lt;/g&gt;
+
+    &lt;/svg&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <svg width="220" height="180">
+
+    <g>
+
+    <circle
+    cx="110"
+    cy="60"
+    r="35"
+    fill="orange">
+    </circle>
+
+    <rect
+    x="75"
+    y="105"
+    width="70"
+    height="40"
+    fill="steelblue">
+    </rect>
+
+    </g>
+
+    </svg>
+
+    </div>
+
+    <h2 style="margin-top:30px;">&lt;image&gt; — Add Bitmap Image Inside SVG</h2>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;svg
+    width="300"
+    height="200"
+    &gt;
+
+      &lt;image
+        href="image.jpg"
+        x="20"
+        y="20"
+        width="200"
+        height="120"
+      /&gt;
+
+    &lt;/svg&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <svg width="300" height="200" style="border:1px solid #ccc;">
+      <text x="50" y="100" font-size="16" fill="gray">
+        image.jpg
+      </text>
+    </svg>
+
+    <p style="margin-top:10px; margin-top:20px;">
+    The image <strong>image.jpg</strong> is displayed inside the SVG.
+    </p>
+    </div>
+
+    <h2 style="margin-bottom:10px;">&lt;progress&gt; — Task Progress Indicator</h2>
+
+    <p style="margin-top:10px;">
+    Represents how much of a task is completed (like file upload, download progress, etc.)
+    </p>
+
+    <p>
+    Use when: You're showing progress toward completion of a known or unknown total task.
+    </p>
+
+    <p>
+    <strong>(Unknown progress):</strong> Shows an indeterminate spinner-like bar (browser default style).
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;progress&gt;
+    &lt;/progress&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;progress
+    value="70"
+    max="100"
+    &gt;
+    &lt;/progress&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <progress value="70" max="100"></progress>
+
+    </div>
+
+    <h2 style="margin-top:30px;">&lt;meter&gt; — Measurement within a range</h2>
+
+    <p style="margin-top:10px;">
+    Represents a scalar value within a known range, like temperature, score, rating, or disk usage.
+    </p>
+
+    <p>
+    Use when: You want to show a measurement, not progress.
+    </p>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+
+    <tr>
+    <th style="border:1px solid #ccc; padding:8px;">Attribute</th>
+    <th style="border:1px solid #ccc; padding:8px;">Description</th>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">value</td>
+    <td style="border:1px solid #ccc; padding:8px;">Current value</td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">min</td>
+    <td style="border:1px solid #ccc; padding:8px;">Minimum value</td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">max</td>
+    <td style="border:1px solid #ccc; padding:8px;">Maximum value</td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">low</td>
+    <td style="border:1px solid #ccc; padding:8px;">Lower range threshold</td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">high</td>
+    <td style="border:1px solid #ccc; padding:8px;">Upper range threshold</td>
+    </tr>
+
+    <tr>
+    <td style="border:1px solid #ccc; padding:8px;">optimum</td>
+    <td style="border:1px solid #ccc; padding:8px;">The best or ideal value</td>
+    </tr>
+
+    </table>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;meter
+    value="75"
+    min="0"
+    max="100"
+    low="30"
+    high="80"
+    optimum="100"
+    &gt;
+    &lt;/meter&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <meter
+    value="75"
+    min="0"
+    max="100"
+    low="30"
+    high="80"
+    optimum="100">
+    </meter>
+
+    </div>
+
+    <h2 style="margin-top:30px;">&lt;details&gt; Tag</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+    <li>Acts like a container that can be expanded or collapsed.</li>
+    <li>By default, it is collapsed.</li>
+    <li>When the user clicks the summary/title, the hidden content becomes visible.</li>
+    </ul>
+
+    <h2 style="margin-top:25px;">&lt;summary&gt; Tag</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+    <li>Defines the visible heading (label) for the &lt;details&gt; element.</li>
+    <li>This is what the user clicks to show/hide the content.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Default Open State</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;details open&gt;
+
+      &lt;summary&gt;
+        HTML
+      &lt;/summary&gt;
+
+      &lt;p&gt;
+        HTML stands for
+        HyperText Markup Language.
+      &lt;/p&gt;
+
+    &lt;/details&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;details&gt;
+
+      &lt;summary&gt;
+        What is HTML?
+      &lt;/summary&gt;
+
+      &lt;p&gt;
+        HTML is the standard
+        markup language for
+        creating web pages.
+      &lt;/p&gt;
+
+    &lt;/details&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <details>
+    <summary>What is HTML?</summary>
+
+    <p>
+    HTML is the standard
+    markup language for
+    creating web pages.
+    </p>
+
+    </details>
+
+    </div>
+
+    <h2 style="margin-top:30px;">&lt;dialog&gt;</h2>
+
+    <p style="margin-top:10px;">
+    &lt;dialog&gt; is an HTML5 element used to create native modal and non-modal dialog boxes (like popups, alerts, confirmation boxes) without needing external libraries or JavaScript-heavy code.
+    </p>
+
+    <h3 style="margin-top:20px;">What &lt;dialog&gt; Does</h3>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li>Creates a popup window inside the webpage.</li>
+
+    <li>Can be shown/hidden using JavaScript (or with the <strong>open</strong> attribute).</li>
+
+    <li>
+    Can behave as:
+    <ul style="padding-left:20px; margin-top:8px;">
+    <li>Modal dialog → blocks background interaction</li>
+    <li>Non-modal dialog → does not block background</li>
+    </ul>
+    </li>
+
+    </ul>
+
+    <h3 style="margin-top:20px;">Example (Using JavaScript)</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;button
+      onclick="myDialog.showModal()"
+      &gt;
+      Open Dialog
+      &lt;/button&gt;
+
+      &lt;dialog id="myDialog"&gt;
+
+        &lt;h3&gt;
+          Welcome
+        &lt;/h3&gt;
+
+        &lt;p&gt;
+          This is a dialog box.
+        &lt;/p&gt;
+
+        &lt;button
+        onclick="myDialog.close()"
+        &gt;
+          Close
+        &lt;/button&gt;
+
+      &lt;/dialog&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+        <button onclick="dialogDemo.showModal()">
+        Open Dialog
+        </button>
+        <dialog id="dialogDemo" 
+        style="
+          position:fixed;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
+          padding:20px;
+          border:none;
+          border-radius:10px;
+          box-shadow:0 4px 15px rgba(0,0,0,.3);
+          width:90%;
+          max-width:400px;
+          "
+        >
+          <h3>Welcome</h3>
+
+          <p>
+          This is a dialog box.
+          </p>
+
+          <button onclick="dialogDemo.close()">
+          Close
+          </button>
+         </dialog>
+       </div>
+    </div>
+
+    <h2 style="margin-bottom:10px; margin-top:20px;">&lt;template&gt; Tag</h2>
+
+    <p style="margin-top:10px;">
+    &lt;template&gt; is an invisible container used to define HTML code that should not render immediately, but can be cloned and inserted later with JavaScript.
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>✅ Browser does NOT display it</li>
+      <li>✅ Content is stored but inactive until used</li>
+      <li>✅ Useful for repeating UI, dynamic lists, reusable components, etc.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;button
+    onclick="showCard()"
+    &gt;
+    Show Card
+    &lt;/button&gt;
+
+    &lt;template id="cardTemplate"&gt;
+
+      &lt;div
+        style="border:1px solid #ccc;
+              padding:10px;
+              margin-top:10px;"
+      &gt;
+
+        &lt;h3&gt;
+          HTML
+        &lt;/h3&gt;
+
+        &lt;p&gt;
+          HTML stands for
+          HyperText Markup Language.
+        &lt;/p&gt;
+
+      &lt;/div&gt;
+
+    &lt;/template&gt;
+
+    &lt;div id="container"&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+
+    function showCard(){
+
+    const template =
+    document.getElementById("cardTemplate");
+
+    const clone =
+    template.content.cloneNode(true);
+
+    document
+    .getElementById("container")
+    .appendChild(clone);
+
+    }
+
+    &lt;/script&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <button onclick="showTemplateCard()">
+    Show Card
+    </button>
+
+    <template id="demoTemplate">
+
+    <div style="border:1px solid #ccc;padding:10px;margin-top:10px;">
+    <h3>HTML</h3>
+    <p>HTML stands for HyperText Markup Language.</p>
+    </div>
+
+    </template>
+
+    <div id="templateContainer"></div>
+
+    <script>
+    function showTemplateCard(){
+
+    const template =
+    document.getElementById("demoTemplate");
+
+    const clone =
+    template.content.cloneNode(true);
+
+    document
+    .getElementById("templateContainer")
+    .appendChild(clone);
+
+    }
+    </script>
+
+    </div>
+
+
+    <h2 style="margin-bottom:10px; margin-top:20px;">&lt;slot&gt; Tag (Web Components)</h2>
+
+      <p style="margin-top:10px;">
+      A slot is like an empty placeholder inside a custom component where other HTML content can be inserted.
+      </p>
+
+      <p>
+      It is used only inside Web Components, not normal HTML.
+      </p>
+
+          <h3 style="margin-top:20px;">Example</h3>
+
+      <div class="code" style="margin-top:10px;">
+      <pre>
+      &lt;my-card&gt;
+
+        &lt;h2&gt;
+          HTML Course
+        &lt;/h2&gt;
+
+      &lt;/my-card&gt;
+
+      &lt;script&gt;
+
+      class MyCard extends HTMLElement {
+
+        connectedCallback() {
+
+          this.innerHTML = \`
+            &lt;div
+            style="
+              border:1px solid #ccc;
+              padding:15px;
+              border-radius:5px;
+            "
+            &gt;
+
+              &lt;slot&gt;
+                Default Title
+              &lt;/slot&gt;
+
+            &lt;/div&gt;
+          \`;
+
+        }
+
+      }
+
+      customElements.define(
+        "my-card",
+        MyCard
+      );
+
+      &lt;/script&gt;
+      </pre>
+      </div>
+
+      <h3 style="margin-top:20px;">Output</h3>
+
+      <div class="output" style="margin-top:10px;">
+
+      <div style="border:1px solid #ccc;padding:15px;border-radius:5px;">
+      <h2>HTML Course</h2>
+      </div>
+
+      </div>
+
+      <h3 style="margin-top:25px;">How It Works (Step by Step)</h3>
+
+      <ol style="padding-left:20px; margin-top:10px;">
+
+      <li style="margin-bottom:10px;">
+      We create our own HTML tag named
+      <strong>&lt;my-card&gt;</strong>.
+      </li>
+
+      <li style="margin-bottom:10px;">
+      Inside JavaScript,
+      <strong>customElements.define("my-card", MyCard)</strong>
+      tells the browser what the
+      <strong>&lt;my-card&gt;</strong> element should display.
+      </li>
+
+      <li style="margin-bottom:10px;">
+      The component contains a
+      <strong>&lt;slot&gt;</strong>.
+      Think of it as an empty placeholder.
+      </li>
+
+      <li style="margin-bottom:10px;">
+      Whatever is written inside
+      <strong>&lt;my-card&gt;...&lt;/my-card&gt;</strong>
+
+      replaces the
+      <strong>&lt;slot&gt;</strong>.
+      </li>
+
+      <li style="margin-bottom:10px;">
+      In this example, the content is:
+
+      <strong>&lt;h2&gt;HTML Course&lt;/h2&gt;</strong>
+
+      So the browser inserts it into the slot.
+      </li>
+
+      <li>
+      If no content is provided inside
+      <strong>&lt;my-card&gt;</strong>,
+      the slot displays its default content:
+      <strong>Default Title</strong>.
+      </li>
+
+      </ol>
+`,
   },
   {
     title: "HTML APIs & Integrations",
