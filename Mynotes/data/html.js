@@ -5843,7 +5843,2614 @@ const htmlData = [
   },
   {
     title: "HTML APIs & Integrations",
-    content: "<h1>HTML Paragraph</h1><p>Paragraph tag is used for text.</p>",
+    content: ` 
+
+    <h2 style="margin-bottom:10px;">Why is it called an HTML API?</h2>
+
+    <p style="margin-top:10px;">
+    When HTML5 was introduced, it wasn't just about adding new HTML elements like:
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    &lt;video&gt;
+    &lt;audio&gt;
+    &lt;canvas&gt;
+    </code></pre>
+    </div>
+
+    <p style="margin-top:15px;">
+    It also introduced browser features that JavaScript could access. These features became known as <strong>HTML5 APIs</strong>.
+    </p>
+
+    <p style="margin-top:10px;">
+    Some examples are:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Geolocation API</li>
+      <li>Drag &amp; Drop API</li>
+      <li>Web Storage API (localStorage, sessionStorage)</li>
+      <li>Web Workers API</li>
+      <li>History API</li>
+      <li>File API</li>
+    </ul>
+
+    <p style="margin-top:15px;">
+    Although these APIs are accessed using <strong>JavaScript</strong>, they were introduced as part of the <strong>HTML5 specification</strong>, which is why they are commonly called <strong>HTML5 APIs</strong>.
+    </p>
+
+    <h2 style="margin-top:30px;">Modern Terminology</h2>
+
+    <p style="margin-top:10px;">
+    Today, developers usually say <strong>Web APIs</strong> instead of <strong>HTML5 APIs</strong>.
+    </p>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    "
+    >
+
+    <tr>
+    <th style="padding:10px;">Old Name</th>
+    <th style="padding:10px;">Modern Name</th>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;">HTML5 Geolocation API</td>
+    <td style="padding:10px;">Web Geolocation API</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;">HTML5 Drag &amp; Drop API</td>
+    <td style="padding:10px;">Drag &amp; Drop API</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;">HTML5 Storage API</td>
+    <td style="padding:10px;">Web Storage API</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;">HTML5 History API</td>
+    <td style="padding:10px;">History API</td>
+    </tr>
+
+    </table>
+
+    <h3 style="margin-top:25px;">Key Point</h3>
+
+    <div
+    style="
+    margin-top:10px;
+    padding:15px;
+    border-left:4px solid #4CAF50;
+    "
+    >
+
+    <strong>Remember:</strong>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>HTML elements are written using HTML tags (e.g., <code>&lt;video&gt;</code>, <code>&lt;canvas&gt;</code>).</li>
+      <li>Web APIs are browser features accessed through JavaScript (e.g., <code>navigator.geolocation</code>, <code>localStorage</code>, <code>history</code>).</li>
+      <li>These APIs are called <strong>HTML5 APIs</strong> because they were introduced with HTML5, even though they are used through JavaScript.</li>
+    </ul>
+
+    </div>
+
+    <h2 style="margin-top:20px;">Geolocation API</h2>
+
+    <p style="margin-top:10px;">
+    The Geolocation API allows a web page to access the user’s geographical location — such as their latitude, longitude, and accuracy — with the user’s permission.
+    </p>
+
+    <p>
+    It’s part of HTML5 and works via the <strong>navigator.geolocation</strong> object.
+    </p>
+
+    <h3 style="margin-top:20px;">How It Works</h3>
+
+    <ol style="padding-left:20px; margin-top:10px;">
+
+    <li style="margin-bottom:10px;">
+    When <strong>getCurrentPosition()</strong> is called:
+    <ul style="padding-left:20px; margin-top:10px;">
+    <li>Browser asks the user for permission.</li>
+    <li>If allowed, it retrieves the GPS location (via GPS, Wi-Fi, or IP address).</li>
+    </ul>
+    </li>
+
+    <li>
+    The data returned in <strong>position.coords</strong> includes:
+    <ul style="padding-left:20px; margin-top:10px;">
+    <li>latitude</li>
+    <li>longitude</li>
+    <li>accuracy (in meters)</li>
+    <li>altitude (if available)</li>
+    <li>speed (if available)</li>
+    <li>timestamp</li>
+    </ul>
+    </li>
+
+    </ol>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    &lt;button
+    onclick="getLocation()"
+    &gt;
+    Get My Location
+    &lt;/button&gt;
+
+    &lt;p id="output"&gt;
+    &lt;/p&gt;
+
+    &lt;script&gt;
+
+    function getLocation() {
+
+    if (navigator.geolocation) {
+
+    navigator.geolocation.getCurrentPosition(
+    showPosition,
+    showError
+    );
+
+    } else {
+
+    document.getElementById("output").innerText =
+    "Geolocation is not supported by this browser.";
+
+    }
+
+    }
+
+    function showPosition(position) {
+
+    const lat =
+    position.coords.latitude;
+
+    const lon =
+    position.coords.longitude;
+
+    document.getElementById("output").innerText =
+    "Latitude: " + lat + ", Longitude: " + lon;
+
+    function showError(error) {
+
+    switch (error.code) {
+
+    case error.PERMISSION_DENIED:
+
+    alert(
+    "User denied the request for Geolocation."
+    );
+
+    break;
+
+    case error.POSITION_UNAVAILABLE:
+
+    alert(
+    "Location information is unavailable."
+    );
+
+    break;
+
+    case error.TIMEOUT:
+
+    alert(
+    "The request to get user location timed out."
+    );
+
+    break;
+
+    default:
+
+    alert(
+    "An unknown error occurred."
+    );
+
+    }
+
+    }
+
+    &lt;/script&gt;
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <button onclick="getLocationDemo()">
+    Get My Location
+    </button>
+
+    <p id="demoLocation" style="margin-top:10px;"></p>
+
+    <script>
+    function getLocationDemo(){
+
+    if(navigator.geolocation){
+
+    navigator.geolocation.getCurrentPosition(
+    showPositionDemo,
+
+    function(){
+
+    document.getElementById("demoLocation").innerHTML =
+    "Permission denied or location unavailable.";
+
+    }
+
+    );
+
+    }else{
+
+    document.getElementById("demoLocation").innerHTML =
+    "Geolocation is not supported.";
+
+    }
+
+    }
+
+    function showPositionDemo(position) {
+
+    const lat =
+    position.coords.latitude;
+
+    const lon =
+    position.coords.longitude;
+
+    document.getElementById("demoLocation").innerHTML =
+    "Latitude: " + lat + "<br>Longitude: " + lon;
+
+    }
+    </script>
+
+    </div>
+
+    <h2 style="margin-top:30px;">Tracking User's Movement (Live Updates)</h2>
+
+    <p style="margin-top:10px;">
+    Use <strong>watchPosition()</strong> to keep receiving updates as the user moves.
+    </p>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre>
+    navigator.geolocation.watchPosition(
+
+    function(position){
+
+    console.log(
+    position.coords.latitude
+    );
+
+    console.log(
+    position.coords.longitude
+    );
+
+    }
+
+    );
+    </pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Explanation</h3>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+    <li><strong>watchPosition()</strong> continuously monitors the user's location.</li>
+    <li>Whenever the location changes, the callback function is called automatically.</li>
+    <li>Useful for navigation apps, fitness tracking, and live location sharing.</li>
+    </ul>
+
+    <h2 style="margin-bottom:10px; margin-top:20px;">Drag &amp; Drop API</h2>
+
+    <p style="margin-top:10px;">
+    It enables elements in the browser to be:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Draggable (moved by the user)</li>
+      <li>Droppable (receiving the dragged item)</li>
+    </ul>
+    <h2 style="margin-top:30px;">Event Flow Summary</h2>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    "
+    >
+
+    <tr>
+    <th style="padding:10px;">Event</th>
+    <th style="padding:10px;">Fired When</th>
+    <th style="padding:10px;">Example Handler</th>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>dragstart</code></td>
+    <td style="padding:10px;">User starts dragging</td>
+    <td style="padding:10px;"><code>event.dataTransfer.setData()</code></td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>drag</code></td>
+    <td style="padding:10px;">While dragging</td>
+    <td style="padding:10px;">For visual feedback</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>dragenter</code></td>
+    <td style="padding:10px;">Drag enters drop zone</td>
+    <td style="padding:10px;">Highlight zone</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>dragover</code></td>
+    <td style="padding:10px;">Drag is over drop zone</td>
+    <td style="padding:10px;"><code>event.preventDefault()</code></td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>dragleave</code></td>
+    <td style="padding:10px;">Drag leaves drop zone</td>
+    <td style="padding:10px;">Remove highlight</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>drop</code></td>
+    <td style="padding:10px;">Item is dropped</td>
+    <td style="padding:10px;">Handle dropped data</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>dragend</code></td>
+    <td style="padding:10px;">Dragging stops</td>
+    <td style="padding:10px;">Cleanup</td>
+    </tr>
+
+    </table>
+
+    <h2 style="margin-top:30px;">Example</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    &lt;div
+    id="box"
+    draggable="true"
+    ondragstart="drag(event)"
+    &gt;
+    Drag Me
+    &lt;/div&gt;
+
+    &lt;div
+    id="dropZone"
+    ondragover="allowDrop(event)"
+    ondrop="drop(event)"
+    &gt;
+    Drop Here
+    &lt;/div&gt;
+
+    &lt;script&gt;
+
+    function allowDrop(event){
+
+    event.preventDefault();
+
+    }
+
+    function drag(event){
+
+    event.dataTransfer.setData(
+    "text",
+    event.target.id
+    );
+
+    }
+
+    function drop(event){
+
+    event.preventDefault();
+
+    const data =
+    event.dataTransfer.getData("text");
+
+    event.target.appendChild(
+    document.getElementById(data)
+    );
+
+    }
+
+    &lt;/script&gt;
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Output</h2>
+
+    <div class="output" style="margin-top:10px;">
+
+    <div
+    id="dragBox"
+    draggable="true"
+    ondragstart="dragDemo(event)"
+    style="
+    width:100px;
+    padding:12px;
+    text-align:center;
+    background:#4CAF50;
+    color:white;
+    border-radius:5px;
+    cursor:grab;
+    margin-bottom:15px;
+    "
+    >
+    Drag Me
+    </div>
+
+    <div
+    id="dropDemo"
+    ondragover="allowDropDemo(event)"
+    ondrop="dropDemo(event)"
+    style="
+    width:250px;
+    height:120px;
+    border:2px dashed #999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:8px;
+    "
+    >
+    Drop Here
+    </div>
+
+    <script>
+
+    function allowDropDemo(event){
+
+    event.preventDefault();
+
+    }
+
+    function dragDemo(event){
+
+    event.dataTransfer.setData(
+    "text",
+    event.target.id
+    );
+
+    }
+
+    function dropDemo(event){
+
+    event.preventDefault();
+
+    const data =
+    event.dataTransfer.getData("text");
+
+    event.currentTarget.appendChild(
+    document.getElementById(data)
+    );
+
+    }
+
+    </script>
+
+    </div>
+    <h2 style="margin-top:30px;">How It Works</h2>
+
+    <ol style="padding-left:20px; margin-top:10px;">
+
+    <li style="margin-bottom:10px;">
+    <strong>draggable="true"</strong> → makes the element draggable.
+    </li>
+
+    <li style="margin-bottom:10px;">
+    <strong>dragstart</strong> → triggered when dragging begins (used to store data).
+    </li>
+
+    <li style="margin-bottom:10px;">
+    <strong>dragover</strong> → must prevent default to allow dropping.
+    </li>
+
+    <li>
+    <strong>drop</strong> → triggered when the dragged item is dropped.
+    </li>
+
+    </ol>
+
+    <h2 style="margin-bottom:10px; margin-top:20px;">History API</h2>
+
+    <p style="margin-top:10px;">
+    The <strong>History API</strong> allows JavaScript to interact with the browser's session history without reloading the page.
+    </p>
+
+    <p>
+    It lets developers:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+      <li>Navigate backward and forward.</li>
+      <li>Add new entries to the browser history.</li>
+      <li>Modify the current history entry.</li>
+      <li>Create Single Page Applications (SPAs) without full page reloads.</li>
+    </ul>
+
+    <p style="margin-top:15px;">
+    The History API is available through the <strong>window.history</strong> object.
+    </p>
+
+    <h2 style="margin-top:30px;">Common Methods</h2>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+    <th style="padding:10px;">Method</th>
+    <th style="padding:10px;">Purpose</th>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>back()</code></td>
+    <td style="padding:10px;">Go to previous page</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>forward()</code></td>
+    <td style="padding:10px;">Go to next page</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>go()</code></td>
+    <td style="padding:10px;">Move backward or forward by number of pages</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>pushState()</code></td>
+    <td style="padding:10px;">Add a new history entry</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>replaceState()</code></td>
+    <td style="padding:10px;">Replace current history entry</td>
+    </tr>
+
+    </table>
+
+    <h2 style="margin-top:30px;">history.length</h2>
+
+    <p style="margin-top:10px;">
+    Returns the total number of pages in the browser session history.
+    </p>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code">
+    <pre><code>
+    console.log(history.length);
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">history.back()</h2>
+
+    <p style="margin-top:10px;">
+    Returns to the previous page.
+    </p>
+
+    <p>
+    Equivalent to pressing the browser's <strong>Back</strong> button.
+    </p>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    &lt;button
+    onclick="history.back()"
+    &gt;
+    Go Back
+    &lt;/button&gt;
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <button onclick="history.back()">
+    Go Back
+    </button>
+
+    </div>
+    <h2 style="margin-top:30px;">history.forward()</h2>
+
+    <p style="margin-top:10px;">
+    Moves to the next page.
+    </p>
+
+    <p>
+    Equivalent to pressing the browser's <strong>Forward</strong> button.
+    </p>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    &lt;button
+    onclick="history.forward()"
+    &gt;
+    Go Forward
+    &lt;/button&gt;
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <button onclick="history.forward()">
+    Go Forward
+    </button>
+
+    </div>
+    <h2 style="margin-top:30px;">history.go()</h2>
+
+    <p style="margin-top:10px;">
+    Moves through the browser history.
+    </p>
+
+    <p>
+    Parameter:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+    <li><strong>Negative number</strong> → Move backward.</li>
+    <li><strong>Positive number</strong> → Move forward.</li>
+    <li><strong>0</strong> → Reload the current page.</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    &lt;button onclick="history.go(-1)"&gt;
+    Go Back One Page
+    &lt;/button&gt;
+
+    &lt;button onclick="history.go(1)"&gt;
+    Go Forward One Page
+    &lt;/button&gt;
+
+    &lt;button onclick="history.go(0)"&gt;
+    Reload Page
+    &lt;/button&gt;
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <button onclick="history.go(-1)">
+    Go Back One Page
+    </button>
+
+    <button onclick="history.go(1)">
+    Go Forward One Page
+    </button>
+
+    <button onclick="history.go(0)">
+    Reload Page
+    </button>
+
+    </div>
+    <h2 style="margin-top:30px;">history.pushState()</h2>
+
+    <p style="margin-top:10px;">
+    Adds a new entry to the browser history without reloading the page.
+    </p>
+
+    <p>
+    It is commonly used in Single Page Applications (SPAs) to change the URL dynamically.
+    </p>
+
+    <h3 style="margin-top:20px;">Syntax</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    history.pushState(
+    state,
+    title,
+    url
+    );
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    &lt;button
+    onclick="addHistory()"
+    &gt;
+    Go to About
+    &lt;/button&gt;
+
+    &lt;script&gt;
+
+    function addHistory(){
+
+    history.pushState(
+
+    { page: "about" },
+
+    "",
+
+    "/about"
+
+    );
+
+    }
+
+    &lt;/script&gt;
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <button onclick="addHistoryDemo()">
+    Go to About
+    </button>
+
+    <p id="pushStateMsg" style="margin-top:10px;"></p>
+
+    <script>
+
+    function addHistoryDemo(){
+
+    history.pushState(
+
+    { page:"about" },
+
+    "",
+
+    "/about"
+
+    );
+
+    document.getElementById("pushStateMsg").innerHTML =
+    "URL changed without reloading the page.";
+
+    }
+
+    </script>
+
+    </div>
+    <h2 style="margin-top:30px;">history.replaceState()</h2>
+
+    <p style="margin-top:10px;">
+    Replaces the current history entry without creating a new one.
+    </p>
+
+    <p>
+    Unlike <strong>pushState()</strong>, it does not add a new history record.
+    </p>
+
+    <h3 style="margin-top:20px;">Syntax</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    history.replaceState(
+    state,
+    title,
+    url
+    );
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    &lt;button
+    onclick="replaceHistory()"
+    &gt;
+    Replace Current URL
+    &lt;/button&gt;
+
+    &lt;script&gt;
+
+    function replaceHistory(){
+
+    history.replaceState(
+
+    { page: "profile" },
+
+    "",
+
+    "/profile"
+
+    );
+
+    }
+
+    &lt;/script&gt;
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output" style="margin-top:10px;">
+
+    <button onclick="replaceHistoryDemo()">
+    Replace Current URL
+    </button>
+
+    <p id="replaceStateMsg" style="margin-top:10px;"></p>
+
+    <script>
+
+    function replaceHistoryDemo(){
+
+    history.replaceState(
+
+    { page:"profile" },
+
+    "",
+
+    "/profile"
+
+    );
+
+    document.getElementById("replaceStateMsg").innerHTML =
+    "Current history entry replaced without reloading the page.";
+
+    }
+
+    </script>
+
+    </div>
+
+    <h2 style="margin-bottom:10px;">Web Storage API (localStorage &amp; sessionStorage)</h2>
+
+    <p style="margin-top:10px;">
+    Web Storage provides a way to store <strong>key–value</strong> data in the browser without expiry (<strong>localStorage</strong>) or until the tab closes (<strong>sessionStorage</strong>).
+    </p>
+
+    <p>
+    It is synchronous and much simpler than cookies.
+    </p>
+
+    <p>
+    Both <strong>localStorage</strong> and <strong>sessionStorage</strong> store data as <strong>key–value pairs</strong>.
+    </p>
+
+    <p>
+    A <strong>key</strong> is the name used to identify the data, and the <strong>value</strong> is the data associated with that key.
+    </p>
+
+    <div
+    style="
+    margin-top:15px;
+    padding:15px; 
+    border-left:4px solid #4CAF50;
+    "
+    >
+
+    <strong>Example:</strong>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+    <li>Key → <code>"username"</code></li>
+    <li>Value → <code>"Devendra"</code></li>
+    </ul>
+
+    </div>
+
+    <h2 style="margin-top:30px;">1. localStorage</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li>Data is permanent (stays even after the browser is closed).</li>
+
+    <li>Saved per domain.</li>
+
+    <li>Maximum storage size is approximately <strong>5–10 MB</strong> (depends on the browser).</li>
+
+    <li>Only stores strings.</li>
+
+    <li>Data is shared across all tabs and windows of the same website.</li>
+
+    <li>Commonly used to store user preferences, themes, language settings, and shopping cart data.</li>
+
+    </ul>
+
+    <h2 style="margin-top:30px;">Example: localStorage.setItem()</h2>
+
+    <p style="margin-top:10px;">
+    Stores data in the browser.
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    localStorage.setItem(
+    "userName",
+    "Devendra"
+    );
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Explanation</h3>
+
+    <p>
+    Key = <code>"userName"</code>
+    </p>
+
+    <p>
+    Value = <code>"Devendra"</code>
+    </p>
+
+    <h2 style="margin-top:30px;">Example: localStorage.getItem()</h2>
+
+    <p style="margin-top:10px;">
+    Retrieves stored data using its key.
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    const name =
+    localStorage.getItem("userName");
+
+    console.log(name);
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output">
+    Devendra
+    </div>
+
+    <h2 style="margin-top:30px;">Example: localStorage.removeItem()</h2>
+
+    <p style="margin-top:10px;">
+    Removes a specific item from storage.
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    localStorage.removeItem(
+    "userName"
+    );
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Example: localStorage.clear()</h2>
+
+    <p style="margin-top:10px;">
+    Removes all stored data.
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    localStorage.clear();
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Example: Store an Object</h2>
+
+    <p style="margin-top:10px;">
+    Web Storage stores only strings. To store an object, convert it into JSON using <code>JSON.stringify()</code>.
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    const user = {
+
+    name: "Devendra",
+
+    age: 25,
+
+    city: "Delhi"
+
+    };
+
+    localStorage.setItem(
+    "user",
+    JSON.stringify(user)
+    );
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Example: Retrieve an Object</h2>
+
+    <p style="margin-top:10px;">
+    Use <code>JSON.parse()</code> to convert the JSON string back into an object.
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    const user = JSON.parse(
+
+    localStorage.getItem("user")
+
+    );
+
+    console.log(user.name);
+
+    console.log(user.age);
+
+    console.log(user.city);
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output">
+
+    Devendra
+
+    <br>
+
+    25
+
+    <br>
+
+    Delhi
+
+    </div>
+
+    <h2 style="margin-top:30px;">2. sessionStorage</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li>Data lasts only for the current tab/session.</li>
+
+    <li>When you close the tab, the data is deleted automatically.</li>
+
+    <li>Other tabs cannot access the sessionStorage of another tab.</li>
+
+    <li>Uses the same methods as localStorage.</li>
+
+    <li>Useful for temporary data such as multi-step forms, OTP verification, or temporary user information.</li>
+
+    </ul>
+
+    <h2 style="margin-top:30px;">Example: sessionStorage.setItem()</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    sessionStorage.setItem(
+    "userName",
+    "Devendra"
+    );
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Example: sessionStorage.getItem()</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    const name =
+    sessionStorage.getItem(
+    "userName"
+    );
+
+    console.log(name);
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Example: sessionStorage.removeItem()</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    sessionStorage.removeItem(
+    "userName"
+    );
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Example: sessionStorage.clear()</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    sessionStorage.clear();
+    </code></pre>
+    </div>
+
+    <h2 style="margin-bottom:10px; margin-top:20px;">Cookies</h2>
+
+    <p style="margin-top:10px;">
+    Cookies are small pieces of data stored by the browser as <strong>key–value pairs</strong>.
+    </p>
+
+    <p>
+    Unlike <strong>localStorage</strong> and <strong>sessionStorage</strong>, cookies are automatically sent to the server with every HTTP request.
+    </p>
+
+    <p>
+    They are commonly used for login sessions, authentication, user preferences, and tracking users.
+    </p>
+
+    <h2 style="margin-top:30px;">How Cookies Work</h2>
+
+    <ol style="padding-left:20px; margin-top:10px;">
+
+    <li style="margin-bottom:10px;">
+    A website creates a cookie and stores it in the browser.
+    </li>
+
+    <li style="margin-bottom:10px;">
+    The browser saves the cookie.
+    </li>
+
+    <li style="margin-bottom:10px;">
+    Whenever the user visits the same website again, the browser automatically sends the cookie to the server.
+    </li>
+
+    <li>
+    The server reads the cookie and identifies the user or retrieves stored information.
+    </li>
+
+    </ol>
+
+    <h2 style="margin-top:30px;">Cookie Format</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    key=value
+    </code></pre>
+    </div>
+
+    <p style="margin-top:10px;">
+    Example:
+    </p>
+
+    <div class="code">
+    <pre><code>
+    username=Devendra
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Common Cookie Attributes</h2>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+    <th style="padding:10px;">Attribute</th>
+    <th style="padding:10px;">Purpose</th>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>expires</code></td>
+    <td style="padding:10px;">Sets the expiration date.</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>max-age</code></td>
+    <td style="padding:10px;">Sets the lifetime in seconds.</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>path</code></td>
+    <td style="padding:10px;">Defines where the cookie is available.</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>domain</code></td>
+    <td style="padding:10px;">Defines which domain can access the cookie.</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>secure</code></td>
+    <td style="padding:10px;">Cookie is sent only over HTTPS.</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;"><code>SameSite</code></td>
+    <td style="padding:10px;">Helps protect against CSRF attacks.</td>
+    </tr>
+
+    </table>
+
+    <h2 style="margin-top:30px;">Example: Create a Cookie</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    document.cookie =
+    "userName=Devendra";
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Example: Create a Cookie with Expiry</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    document.cookie =
+    "userName=Devendra;
+    expires=Fri, 31 Dec 2027 12:00:00 UTC;
+    path=/";
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Example: Read Cookies</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    console.log(
+    document.cookie
+    );
+    </code></pre>
+    </div>
+
+    <h3 style="margin-top:20px;">Output</h3>
+
+    <div class="output">
+
+    userName=Devendra
+
+    </div>
+
+    <h2 style="margin-top:30px;">Example: Update a Cookie</h2>
+
+    <p style="margin-top:10px;">
+    Create another cookie with the same name but a different value.
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    document.cookie =
+    "userName=Rahul";
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Example: Delete a Cookie</h2>
+
+    <p style="margin-top:10px;">
+    Set the expiration date to a past date.
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    document.cookie =
+    "userName=;
+    expires=Thu, 01 Jan 1970 00:00:00 UTC;
+    path=/";
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Storage Comparison</h2>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+    <th style="padding:10px;">Feature</th>
+    <th style="padding:10px;">localStorage</th>
+    <th style="padding:10px;">sessionStorage</th>
+    <th style="padding:10px;">Cookies</th>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;">Storage Size</td>
+    <td style="padding:10px;">~5–10 MB</td>
+    <td style="padding:10px;">~5–10 MB</td>
+    <td style="padding:10px;">~4 KB</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;">Lifetime</td>
+    <td style="padding:10px;">Permanent</td>
+    <td style="padding:10px;">Until tab closes</td>
+    <td style="padding:10px;">Until expiry date</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;">Sent to Server</td>
+    <td style="padding:10px;">❌ No</td>
+    <td style="padding:10px;">❌ No</td>
+    <td style="padding:10px;">✅ Yes</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;">Accessible in Other Tabs</td>
+    <td style="padding:10px;">✅ Yes</td>
+    <td style="padding:10px;">❌ No</td>
+    <td style="padding:10px;">✅ Yes</td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px;">Stores Only Strings</td>
+    <td style="padding:10px;">✅ Yes</td>
+    <td style="padding:10px;">✅ Yes</td>
+    <td style="padding:10px;">✅ Yes</td>
+    </tr>
+    </table>
+
+    <h2 style="margin-bottom:10px; margin-top:20px;">Web Workers</h2>
+
+    <p style="margin-top:10px;">
+    A <strong>Web Worker</strong> is a background helper in the browser.
+    </p>
+
+    <p>
+    It runs JavaScript in a <strong>separate thread</strong>, not in the <strong>main UI thread</strong>.
+    </p>
+
+    <h2 style="margin-top:30px;">Why do we need Web Workers?</h2>
+
+    <p style="margin-top:10px;">
+    Normally, JavaScript runs on one thread only → the <strong>main thread</strong>.
+    </p>
+
+    <p>
+    If you do something heavy like:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li>Big calculations</li>
+
+    <li>Image processing</li>
+
+    <li>Loops with millions of iterations</li>
+
+    <li>Data compression</li>
+
+    <li>Fetching and processing large JSON data</li>
+
+    </ul>
+
+    <p style="margin-top:10px;">
+    The browser's UI can become slow or completely freeze until the task finishes.
+    </p>
+
+    <h2 style="margin-top:30px;">Without Web Workers</h2>
+
+    <div
+    style="
+    margin-top:10px;
+    padding:15px; 
+    border:1px solid #ccc;
+    font-family:monospace;
+    white-space:pre;
+    overflow-x:auto;
+    ">
+    Browser
+
+    ┌────────────────────────────────────┐
+    │          Main Thread               │
+    ├────────────────────────────────────┤
+    │ UI Rendering                       │
+    │ Button Clicks                      │
+    │ DOM Updates                        │
+    │ JavaScript                         │
+    │ Heavy Calculation                  │
+    └────────────────────────────────────┘
+
+    Result:
+    ❌ UI becomes slow or freezes.
+    </div>
+
+    <h2 style="margin-top:30px;">With Web Workers</h2>
+
+    <div
+    style="
+    margin-top:10px;
+    padding:15px; 
+    border:1px solid #ccc;
+    font-family:monospace;
+    white-space:pre;
+    overflow-x:auto;
+    ">
+    Browser
+
+    ┌───────────────────────┐
+    │     Main Thread       │
+    ├───────────────────────┤
+    │ UI Rendering          │
+    │ DOM Updates           │
+    │ Button Clicks         │
+    │ Light JavaScript      │
+    └───────────────────────┘
+              │
+              │ Sends Task
+              ▼
+    ┌───────────────────────┐
+    │     Web Worker        │
+    ├───────────────────────┤
+    │ Heavy Calculation     │
+    │ Image Processing      │
+    │ JSON Processing       │
+    │ Background Tasks      │
+    └───────────────────────┘
+              │
+              │ Returns Result
+              ▼
+    Main Thread updates the UI.
+
+    Result:
+    ✅ Smooth UI
+    ✅ No freezing
+    </div>
+
+    <h2 style="margin-top:30px;">JavaScript is Single-Threaded</h2>
+
+    <p style="margin-top:10px;">
+    Normally, JavaScript executes on only one thread called the <strong>Main Thread</strong>.
+    </p>
+
+    <p>
+    Everything happens in this thread:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li>UI rendering</li>
+
+    <li>Button clicks</li>
+
+    <li>DOM updates</li>
+
+    <li>Executing JavaScript</li>
+
+    </ul>
+
+    <p>
+    Since everything shares the same thread, a long-running JavaScript task blocks everything else.
+    </p>
+
+    <h2 style="margin-top:30px;">Then How Does a Web Worker Run on Another Thread?</h2>
+
+    <p style="margin-top:10px;">
+    A Web Worker does <strong>not</strong> come from JavaScript itself.
+    </p>
+
+    <p>
+    Instead, JavaScript asks the browser to create one.
+    </p>
+
+    <p>
+    The browser engine creates a completely separate system thread and runs the worker there.
+    </p>
+
+    <div
+    style="
+    margin-top:15px;
+    padding:15px; 
+    border-left:4px solid #2196F3;
+    font-family:monospace;
+    white-space:pre;
+    overflow-x:auto;
+    ">
+    JavaScript
+
+          │
+
+          │ new Worker()
+
+          ▼
+
+    Browser Engine
+
+          │
+
+    Creates a New Thread
+
+          ▼
+
+    Web Worker
+    </div>
+
+    <h2 style="margin-top:30px;">Who Creates the Second Thread?</h2>
+
+    <p style="margin-top:10px;">
+    The browser engine creates the second thread.
+    </p>
+
+    <p>
+    <strong>Not JavaScript.</strong>
+    </p>
+
+    <p>
+    <strong>Not HTML.</strong>
+    </p>
+
+    <p>
+    <strong>Not the DOM.</strong>
+    </p>
+
+    <p>
+    JavaScript simply requests a worker by using:
+    </p>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    const worker = new Worker(
+    "worker.js"
+    );
+    </code></pre>
+    </div>
+
+    <p style="margin-top:10px;">
+    After this, the browser creates another thread automatically.
+    </p>
+
+    <h2 style="margin-top:30px;">Chrome Internally</h2>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li><strong>V8</strong> → JavaScript Engine</li>
+
+    <li><strong>Blink</strong> → Rendering Engine</li>
+
+    </ul>
+
+    <p>
+    When JavaScript creates a worker:
+    </p>
+
+    <div
+    style="
+    margin-top:15px;
+    padding:15px; 
+    border:1px solid #ccc;
+    font-family:monospace;
+    white-space:pre;
+    overflow-x:auto;
+    ">
+    JavaScript
+
+          │
+
+    new Worker()
+
+          │
+
+          ▼
+
+    V8 Engine
+
+          │
+
+    Requests
+
+          ▼
+
+    Blink / Operating System
+
+          │
+
+    Creates
+
+          ▼
+
+    New System Thread
+
+          │
+
+    Runs
+
+          ▼
+
+    worker.js
+    </div>
+
+    <h2 style="margin-top:30px;">Remember</h2>
+
+    <div
+    style="
+    margin-top:10px;
+    padding:15px; 
+    border-left:4px solid #4CAF50;
+    ">
+
+    <ul style="padding-left:20px;">
+
+    <li>JavaScript is single-threaded by default.</li>
+
+    <li>A Web Worker runs JavaScript in a separate thread.</li>
+
+    <li>The browser engine creates the worker thread.</li>
+
+    <li>Heavy tasks should be moved to a Web Worker.</li>
+
+    <li>The main thread stays responsive while the worker performs background tasks.</li>
+
+    <li>A Web Worker cannot directly access the DOM.</li>
+
+    </ul>
+
+    </div>
+
+    <h2 style="margin-bottom:10px; margin-top:20px;">File API</h2>
+
+    <p style="margin-top:10px;">
+    The <strong>File API</strong> allows JavaScript to access files selected by the user from their computer.
+    </p>
+
+    <p>
+    It lets web applications read the contents of files without uploading them to a server.
+    </p>
+
+    <p>
+    For security reasons, browsers <strong>cannot access files automatically</strong>. The user must explicitly choose a file.
+    </p>
+
+    <h2 style="margin-top:30px;">Why do we need the File API?</h2>
+
+    <p style="margin-top:10px;">
+    The File API is useful when your website needs to work with user-selected files.
+    </p>
+
+    <p>
+    Common use cases:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li>Uploading profile pictures</li>
+
+    <li>Reading text files</li>
+
+    <li>Previewing images before upload</li>
+
+    <li>Uploading PDFs or documents</li>
+
+    <li>Reading CSV or Excel files</li>
+
+    <li>Importing JSON files</li>
+
+    <li>Drag & Drop file uploads</li>
+
+    </ul>
+
+    <h2 style="margin-top:30px;">How It Works</h2>
+
+    <div
+    style="
+    margin-top:10px;
+    padding:15px; 
+    border:1px solid #ccc;
+    font-family:monospace;
+    white-space:pre;
+    overflow-x:auto;
+    ">
+    User
+
+      │
+
+    Selects File
+
+      │
+
+      ▼
+
+    &lt;input type="file"&gt;
+
+      │
+
+      ▼
+
+    File Object
+
+      │
+
+      ▼
+
+    JavaScript
+
+      │
+
+      ▼
+
+    Read File Content
+    </div>
+
+
+    <h2 style="margin-top:30px;">Important Objects</h2>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+
+    <th style="padding:10px;">Object</th>
+
+    <th style="padding:10px;">Purpose</th>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;"><code>File</code></td>
+
+    <td style="padding:10px;">Represents a selected file.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;"><code>FileList</code></td>
+
+    <td style="padding:10px;">Collection of selected files.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;"><code>FileReader</code></td>
+
+    <td style="padding:10px;">Reads the contents of a file.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;"><code>Blob</code></td>
+
+    <td style="padding:10px;">Represents raw binary data.</td>
+
+    </tr>
+
+    </table>
+
+    <h2 style="margin-top:30px;">Selecting a File</h2>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    &lt;input
+    type="file"
+    &gt;
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Selecting Multiple Files</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    &lt;input
+    type="file"
+    multiple
+    &gt;
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">accept Attribute</h2>
+
+    <p style="margin-top:10px;">
+    The <code>accept</code> attribute limits which file types the user can select.
+    </p>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+
+    <th style="padding:10px;">Value</th>
+
+    <th style="padding:10px;">Allows</th>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">image/*</td>
+
+    <td style="padding:10px;">All images</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">video/*</td>
+
+    <td style="padding:10px;">All videos</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">audio/*</td>
+
+    <td style="padding:10px;">All audio files</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">.pdf</td>
+
+    <td style="padding:10px;">PDF files</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">.txt</td>
+
+    <td style="padding:10px;">Text files</td>
+
+    </tr>
+
+    </table>
+
+    Example
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    &lt;input
+    type="file"
+    accept="image/*"
+    &gt;
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Accessing the Selected File</h2>
+
+    <div class="code" style="margin-top:10px;">
+    <pre><code>
+    const input =
+
+    document.querySelector(
+    "input"
+    );
+
+    const file =
+
+    input.files[0];
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">File Properties</h2>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+
+    <th style="padding:10px;">Property</th>
+
+    <th style="padding:10px;">Description</th>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">name</td>
+
+    <td style="padding:10px;">File name</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">size</td>
+
+    <td style="padding:10px;">Size in bytes</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">type</td>
+
+    <td style="padding:10px;">MIME type</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">lastModified</td>
+
+    <td style="padding:10px;">Last modified time</td>
+
+    </tr>
+
+    </table>
+
+    <h2 style="margin-top:30px;">Example: Display File Information</h2>
+
+    <div class="code">
+    <pre><code>
+    &lt;input
+    type="file"
+    id="fileInput"
+    &gt;
+
+    &lt;script&gt;
+
+    const input =
+
+    document.getElementById(
+    "fileInput"
+    );
+
+    input.onchange = function(){
+
+    const file =
+    this.files[0];
+
+    console.log(file.name);
+
+    console.log(file.size);
+
+    console.log(file.type);
+
+    };
+
+    &lt;/script&gt;
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">FileReader</h2>
+
+    <p style="margin-top:10px;">
+    The <strong>FileReader</strong> object is used to read the contents of a file.
+    </p>
+
+    <h2 style="margin-top:30px;">Common Methods</h2>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+
+    <th style="padding:10px;">Method</th>
+
+    <th style="padding:10px;">Description</th>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">readAsText()</td>
+
+    <td style="padding:10px;">Reads a text file.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">readAsDataURL()</td>
+
+    <td style="padding:10px;">Reads file as Base64.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">readAsArrayBuffer()</td>
+
+    <td style="padding:10px;">Reads binary data.</td>
+
+    </tr>
+
+    </table>
+
+    <h2 style="margin-top:30px;">Example: Read a Text File</h2>
+
+    <div class="code">
+    <pre><code>
+    &lt;input
+    type="file"
+    id="fileInput"
+    &gt;
+
+    &lt;script&gt;
+
+    const input =
+
+    document.getElementById(
+    "fileInput"
+    );
+
+    input.onchange = function(){
+
+    const file =
+    this.files[0];
+
+    const reader =
+
+    new FileReader();
+
+    reader.onload = function(){
+
+    console.log(
+    reader.result
+    );
+
+    };
+
+    reader.readAsText(
+    file
+    );
+
+    };
+
+    &lt;/script&gt;
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Example: Preview an Image</h2>
+
+    <div class="code">
+    <pre><code>
+    &lt;input
+    type="file"
+    id="imageInput"
+    accept="image/*"
+    &gt;
+
+    &lt;img id="preview"&gt;
+
+    &lt;script&gt;
+
+    const input =
+
+    document.getElementById(
+    "imageInput"
+    );
+
+    const image =
+
+    document.getElementById(
+    "preview"
+    );
+
+    input.onchange = function(){
+
+    const file =
+    this.files[0];
+
+    const reader =
+
+    new FileReader();
+
+    reader.onload = function(){
+
+    image.src =
+    reader.result;
+
+    };
+
+    reader.readAsDataURL(
+    file
+    );
+
+    };
+
+    &lt;/script&gt;
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:30px;">Blob</h2>
+
+    <p style="margin-top:10px;">
+    A <strong>Blob</strong> (Binary Large Object) represents raw binary data.
+    </p>
+
+    <p>
+    Images, videos, PDFs, and files are internally represented as Blob objects.
+    </p>
+
+    Example
+
+    <div class="code">
+    <pre><code>
+    const blob =
+
+    new Blob(
+
+    ["Hello World"],
+
+    {
+    type:"text/plain"
+    }
+
+    );
+    </code></pre>
+    </div>
+
+<h2 style="margin-bottom:10px;">Embedding External Content in HTML</h2>
+
+<p style="margin-top:10px;">
+HTML provides tags to display external content inside a web page.
+</p>
+
+<p>
+You can embed:
+</p>
+
+<ul style="padding-left:20px; margin-top:10px;">
+
+<li>Videos</li>
+
+<li>Maps</li>
+
+<li>Another website</li>
+
+<li>PDF files</li>
+
+<li>Media players</li>
+
+<li>Online tools</li>
+
+</ul>
+
+<p>
+The three main tags used are:
+</p>
+
+<ol style="padding-left:20px; margin-top:10px;">
+
+<li><code>&lt;iframe&gt;</code></li>
+
+<li><code>&lt;embed&gt;</code></li>
+
+<li><code>&lt;object&gt;</code></li>
+
+</ol> 
+
+<h2 style="margin-top:20px;">&lt;iframe&gt; — Inline Frame</h2>
+
+<p style="margin-top:10px;">
+The <code>&lt;iframe&gt;</code> tag is the most commonly used element for embedding external content.
+</p>
+
+<p>
+It loads an entire HTML document or webpage inside a small window on your page.
+</p>
+
+<h3 style="margin-top:20px;">Uses</h3>
+
+<ul style="padding-left:20px; margin-top:10px;">
+
+<li>Embedding YouTube videos</li>
+
+<li>Google Maps</li>
+
+<li>External websites</li>
+
+<li>Payment forms (Stripe, Razorpay)</li>
+
+<li>Advertisements (Google Ads, Facebook Ads)</li>
+
+</ul>
+
+<h3 style="margin-top:20px;">Important Attributes</h3>
+
+<table
+border="1"
+style="
+border-collapse:collapse;
+width:100%;
+margin-top:10px;
+text-align:center;
+">
+
+<tr>
+
+<th style="padding:10px;">Attribute</th>
+
+<th style="padding:10px;">Purpose</th>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">src</td>
+
+<td style="padding:10px;">URL of the page to display.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">width</td>
+
+<td style="padding:10px;">Width of the iframe.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">height</td>
+
+<td style="padding:10px;">Height of the iframe.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">title</td>
+
+<td style="padding:10px;">Accessibility description.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">allowfullscreen</td>
+
+<td style="padding:10px;">Allows fullscreen mode.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">loading="lazy"</td>
+
+<td style="padding:10px;">Loads the iframe only when needed.</td>
+
+</tr>
+
+</table>
+
+<h3 style="margin-top:20px;">Example</h3>
+
+<div class="code">
+<pre><code>
+&lt;iframe
+
+src="https://example.com"
+
+width="500"
+
+height="300"
+
+title="Example Website"
+
+&gt;
+
+&lt;/iframe&gt;
+</code></pre>
+</div>
+
+<h2 style="margin-top:20px;">&lt;embed&gt; — Embedding Non-HTML Content</h2>
+
+<p style="margin-top:10px;">
+The <code>&lt;embed&gt;</code> tag is used to embed external files directly into a webpage.
+</p>
+
+<p>
+Unlike <code>&lt;iframe&gt;</code>, it does not load an entire webpage.
+</p>
+
+<h3 style="margin-top:20px;">Uses</h3>
+
+<ul style="padding-left:20px; margin-top:10px;">
+
+<li>PDF files</li>
+
+<li>Audio files</li>
+
+<li>Video files</li>
+
+<li>SVG images</li>
+
+<li>Flash content (legacy)</li>
+
+</ul>
+
+<h3 style="margin-top:20px;">Important Attributes</h3>
+
+<table
+border="1"
+style="
+border-collapse:collapse;
+width:100%;
+margin-top:10px;
+text-align:center;
+">
+
+<tr>
+
+<th style="padding:10px;">Attribute</th>
+
+<th style="padding:10px;">Purpose</th>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">src</td>
+
+<td style="padding:10px;">Path of the file.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">type</td>
+
+<td style="padding:10px;">MIME type of the file.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">width</td>
+
+<td style="padding:10px;">Width.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">height</td>
+
+<td style="padding:10px;">Height.</td>
+
+</tr>
+
+</table>
+
+<h3 style="margin-top:20px;">Example</h3>
+
+<div class="code">
+<pre><code>
+&lt;embed
+
+src="resume.pdf"
+
+type="application/pdf"
+
+width="600"
+
+height="400"
+
+&gt;
+</code></pre>
+</div>
+
+<h2 style="margin-top:20px;">&lt;object&gt; — General Purpose Embedding</h2>
+
+<p style="margin-top:10px;">
+The <code>&lt;object&gt;</code> tag is a flexible element used to embed different types of external resources.
+</p>
+
+<p>
+It can display files and also provide fallback content if the browser cannot display the file.
+</p>
+
+<h3 style="margin-top:20px;">Uses</h3>
+
+<ul style="padding-left:20px; margin-top:10px;">
+
+<li>PDF files</li>
+
+<li>Images</li>
+
+<li>Videos</li>
+
+<li>Flash (legacy)</li>
+
+<li>External webpages (rare)</li>
+
+</ul>
+
+<h3 style="margin-top:20px;">Important Attributes</h3>
+
+<table
+border="1"
+style="
+border-collapse:collapse;
+width:100%;
+margin-top:10px;
+text-align:center;
+">
+
+<tr>
+
+<th style="padding:10px;">Attribute</th>
+
+<th style="padding:10px;">Purpose</th>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">data</td>
+
+<td style="padding:10px;">Resource to display.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">type</td>
+
+<td style="padding:10px;">File MIME type.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">width</td>
+
+<td style="padding:10px;">Width.</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">height</td>
+
+<td style="padding:10px;">Height.</td>
+
+</tr>
+
+</table>
+
+<h3 style="margin-top:20px;">Example</h3>
+
+<div class="code">
+<pre><code>
+&lt;object
+
+data="resume.pdf"
+
+type="application/pdf"
+
+width="600"
+
+height="400"
+
+&gt;
+
+PDF not supported.
+
+&lt;/object&gt;
+</code></pre>
+</div>
+
+<h2>Comparison</h2>
+
+<table
+border="1"
+style="
+border-collapse:collapse;
+width:100%;
+margin-top:10px;
+text-align:center;
+">
+
+<tr>
+
+<th style="padding:10px;">Feature</th>
+
+<th style="padding:10px;">&lt;iframe&gt;</th>
+
+<th style="padding:10px;">&lt;embed&gt;</th>
+
+<th style="padding:10px;">&lt;object&gt;</th>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">Embeds Webpages</td>
+
+<td style="padding:10px;">✅ Yes</td>
+
+<td style="padding:10px;">❌ No</td>
+
+<td style="padding:10px;">⚠ Rarely</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">Embeds PDF</td>
+
+<td style="padding:10px;">✅ Yes</td>
+
+<td style="padding:10px;">✅ Yes</td>
+
+<td style="padding:10px;">✅ Yes</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">Embeds Images</td>
+
+<td style="padding:10px;">❌</td>
+
+<td style="padding:10px;">✅</td>
+
+<td style="padding:10px;">✅</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">Fallback Content</td>
+
+<td style="padding:10px;">❌</td>
+
+<td style="padding:10px;">❌</td>
+
+<td style="padding:10px;">✅</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">Most Common Today</td>
+
+<td style="padding:10px;">⭐⭐⭐⭐⭐</td>
+
+<td style="padding:10px;">⭐⭐</td>
+
+<td style="padding:10px;">⭐⭐</td>
+
+</tr>
+
+</table>
+
+    `,
   },
 ];
 

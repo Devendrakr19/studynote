@@ -6,10 +6,9 @@ const htmlList = document.getElementById("htmlList");
 const cssList = document.getElementById("cssList");
 const dsaList = document.getElementById("dsaList");
 
-// ========================================
-// MAIN PAGE ELEMENTS
-// ========================================
-
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+ 
 const contentArea = document.getElementById("contentArea");
 const searchInput = document.getElementById("searchInput");
 const headers = document.querySelectorAll(".section-header");
@@ -17,30 +16,14 @@ const headers = document.querySelectorAll(".section-header");
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.querySelector(".sidebar");
 const overlay = document.getElementById("overlay");
-
-// ========================================
-// CURRENT ACTIVE STATE
-//
-// currentData = currently selected category data
-// currentIndex = currently selected lesson index
-// currentList = currently selected sidebar list
-// ========================================
-
+ 
 let currentData = [];
 let currentIndex = 0;
 let currentList = null;
 
 // ========================================
 // SEARCH FUNCTIONALITY
-//
-// Filters lessons in sidebar while typing
-//
-// Example:
-// Search "head"
-// Shows "HTML Headings"
-// ========================================
-
-searchInput.addEventListener("input", () => {
+ searchInput.addEventListener("input", () => {
   const searchTerm = searchInput.value.toLowerCase();
 
   document.querySelectorAll(".section").forEach((section) => {
@@ -58,15 +41,7 @@ searchInput.addEventListener("input", () => {
 
 // ========================================
 // LOAD ALL JSON FILES
-//
-// Add more categories here later
-//
-// Example:
-// const reactData = await fetch(...)
-// renderSidebar(reactData, reactList);
-// ========================================
-
-async function loadTopics() { 
+ async function loadTopics() { 
 
   renderSidebar(htmlData, htmlList);
   renderSidebar(cssData, cssList);
@@ -75,19 +50,7 @@ async function loadTopics() {
 
 // ========================================
 // CREATE SIDEBAR LESSONS
-//
-// Dynamically creates LI elements
-// from JSON data
-//
-// Example:
-//
-// HTML
-//  - Introduction
-//  - Headings
-//  - Paragraphs
-// ========================================
-
-function renderSidebar(data, list) {
+ function renderSidebar(data, list) {
   data.forEach((topic, index) => {
     const li = document.createElement("li");
 
@@ -114,15 +77,7 @@ function renderSidebar(data, list) {
 }
 
 // ========================================
-// UPDATE ACTIVE SIDEBAR ITEM
-//
-// Removes active class from all lessons
-// and adds it to currently selected lesson
-//
-// Called automatically whenever
-// content changes
-// ========================================
-
+// UPDATE ACTIVE SIDEBAR ITEM 
 function updateActiveTopic() {
   document.querySelectorAll(".sidebar li").forEach((item) => {
     item.classList.remove("active-topic");
@@ -136,33 +91,29 @@ function updateActiveTopic() {
 }
 
 // ========================================
-// DISPLAY CONTENT
-//
-// Loads lesson content into content area
-//
-// Example:
-// HTML Headings lesson
-// ========================================
-
+// DISPLAY CONTENT 
 function showContent() {
   contentArea.innerHTML = currentData[currentIndex].content;
 
   updateActiveTopic();
+
+  // Show/Hide Previous button
+  prevBtn.style.display = currentIndex === 0 ? "none" : "inline-block";
+
+  // Show/Hide Next button
+  nextBtn.style.display =
+    currentIndex === currentData.length - 1 ? "none" : "inline-block";
+
+  // Scroll content to top
+  document.querySelector(".content").scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 // ========================================
 // EXPAND / COLLAPSE CATEGORY
-//
-// ▼ HTML Tutorial
-//
-// becomes
-//
-// ▶ HTML Tutorial
-//
-// and hides lessons
-// ========================================
-
-headers.forEach((header) => {
+ headers.forEach((header) => {
   header.addEventListener("click", () => {
     const list = header.nextElementSibling;
 
@@ -177,12 +128,8 @@ headers.forEach((header) => {
 });
 
 // ========================================
-// NEXT BUTTON
-//
-// Move to next lesson
-// ========================================
-
-document.getElementById("nextBtn").addEventListener("click", () => {
+// NEXT BUTTON 
+nextBtn.addEventListener("click", () => {
   if (currentIndex < currentData.length - 1) {
     currentIndex++;
 
@@ -191,33 +138,16 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 });
 
 // ========================================
-// PREVIOUS BUTTON
-//
-// Move to previous lesson
-// ========================================
-
-document.getElementById("prevBtn").addEventListener("click", () => {
+// PREVIOUS BUTTON 
+prevBtn.addEventListener("click", () => {
   if (currentIndex > 0) {
     currentIndex--;
 
     showContent();
   }
-});
-
-// ========================================
-// DARK / LIGHT MODE
-// ========================================
-
-// document.getElementById("themeBtn").addEventListener("click", () => {
-//   document.body.classList.toggle("light");
-// });
-
-// ========================================
-// START APPLICATION
-// ========================================
+}); 
 
 loadTopics();
-
 
 menuBtn.addEventListener("click", () => {
     sidebar.classList.toggle("show");
