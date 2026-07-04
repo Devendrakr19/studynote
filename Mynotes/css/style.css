@@ -65,6 +65,7 @@ header{
   border-radius: 8px;
   padding:30px;
   background:#2d2d30;
+  position: relative;
 }
 
 .content h1{
@@ -74,6 +75,33 @@ header{
 .content p{
   margin-bottom:15px;
   line-height:1.7;
+}
+
+#sidebarBtn{ 
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  font-size: 18px;
+  padding: 0px 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+
+}
+
+#sidebarBtn:hover{
+  color: rgb(50, 194, 220);
+  transition: all 0.4s;
+}
+
+body.sidebar-hidden .sidebar{
+  display:none;
+}
+
+body.sidebar-hidden .content{
+  width:100%;
 }
 
 .code{
@@ -211,6 +239,10 @@ header{
     .overlay.show{
         opacity:1;
         visibility:visible;
+    }
+
+    #sidebarBtn{
+      display:none;
     }
 }
 

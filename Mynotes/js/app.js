@@ -1,14 +1,16 @@
-﻿import htmlData from "../data/html.js"
-import cssData from "../data/css.js"
-import dsaData from "../data/dsa.js"
+﻿import htmlData from "../data/html.js";
+import cssData from "../data/css.js";
+import dsaData from "../data/dsa.js";
+import reactData from "../data/react.js";
 
 const htmlList = document.getElementById("htmlList");
 const cssList = document.getElementById("cssList");
+const reactList = document.getElementById("reactList");
 const dsaList = document.getElementById("dsaList");
 
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
- 
+
 const contentArea = document.getElementById("contentArea");
 const searchInput = document.getElementById("searchInput");
 const headers = document.querySelectorAll(".section-header");
@@ -16,14 +18,15 @@ const headers = document.querySelectorAll(".section-header");
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.querySelector(".sidebar");
 const overlay = document.getElementById("overlay");
- 
+const sidebarToggleBtn = document.getElementById("sidebarBtn");
+
 let currentData = [];
 let currentIndex = 0;
 let currentList = null;
 
 // ========================================
 // SEARCH FUNCTIONALITY
- searchInput.addEventListener("input", () => {
+searchInput.addEventListener("input", () => {
   const searchTerm = searchInput.value.toLowerCase();
 
   document.querySelectorAll(".section").forEach((section) => {
@@ -41,16 +44,26 @@ let currentList = null;
 
 // ========================================
 // LOAD ALL JSON FILES
- async function loadTopics() { 
-
+async function loadTopics() {
   renderSidebar(htmlData, htmlList);
   renderSidebar(cssData, cssList);
+  renderSidebar(reactData, reactList);
   renderSidebar(dsaData, dsaList);
 }
 
 // ========================================
+// hide and show sidebar
+sidebarToggleBtn.addEventListener("click", () => {
+  const sidebarHidden = document.body.classList.toggle("sidebar-hidden");
+
+  sidebarToggleBtn.textContent = sidebarHidden ? "✖" : "☰"; 
+  sidebar.classList.remove("show");
+  overlay.classList.remove("show");
+});
+
+// ========================================
 // CREATE SIDEBAR LESSONS
- function renderSidebar(data, list) {
+function renderSidebar(data, list) {
   data.forEach((topic, index) => {
     const li = document.createElement("li");
 
@@ -66,10 +79,9 @@ let currentList = null;
 
       showContent();
 
-        // Close sidebar on mobile
-  sidebar.classList.remove("show");
-  overlay.classList.remove("show");
-
+      // Close sidebar on mobile
+      sidebar.classList.remove("show");
+      overlay.classList.remove("show");
     });
 
     list.appendChild(li);
@@ -77,7 +89,7 @@ let currentList = null;
 }
 
 // ========================================
-// UPDATE ACTIVE SIDEBAR ITEM 
+// UPDATE ACTIVE SIDEBAR ITEM
 function updateActiveTopic() {
   document.querySelectorAll(".sidebar li").forEach((item) => {
     item.classList.remove("active-topic");
@@ -91,7 +103,7 @@ function updateActiveTopic() {
 }
 
 // ========================================
-// DISPLAY CONTENT 
+// DISPLAY CONTENT
 function showContent() {
   contentArea.innerHTML = currentData[currentIndex].content;
 
@@ -107,28 +119,37 @@ function showContent() {
   // Scroll content to top
   document.querySelector(".content").scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 }
 
 // ========================================
 // EXPAND / COLLAPSE CATEGORY
- headers.forEach((header) => {
-  header.addEventListener("click", () => {
-    const list = header.nextElementSibling;
+headers.forEach((header) => {
+  const list = header.nextElementSibling;
 
-    list.classList.toggle("hidden");
+  list.classList.add("hidden");
+  header.textContent = header.textContent.replace("▼", "▶");
 
-    if (list.classList.contains("hidden")) {
-      header.textContent = header.textContent.replace("▼", "▶");
-    } else {
+  header.addEventListener("click", () => { 
+    const wasHidden = list.classList.contains("hidden");
+
+    headers.forEach((otherHeader) => {
+      const otherList = otherHeader.nextElementSibling;
+
+      otherList.classList.add("hidden");
+      otherHeader.textContent = otherHeader.textContent.replace("▼", "▶");
+    });
+
+    if (wasHidden) {
+      list.classList.remove("hidden");
       header.textContent = header.textContent.replace("▶", "▼");
     }
   });
 });
 
 // ========================================
-// NEXT BUTTON 
+// NEXT BUTTON
 nextBtn.addEventListener("click", () => {
   if (currentIndex < currentData.length - 1) {
     currentIndex++;
@@ -138,23 +159,23 @@ nextBtn.addEventListener("click", () => {
 });
 
 // ========================================
-// PREVIOUS BUTTON 
+// PREVIOUS BUTTON
 prevBtn.addEventListener("click", () => {
   if (currentIndex > 0) {
     currentIndex--;
 
     showContent();
   }
-}); 
+});
 
 loadTopics();
 
 menuBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("show");
-    overlay.classList.toggle("show");
+  sidebar.classList.toggle("show");
+  overlay.classList.toggle("show");
 });
 
 overlay.addEventListener("click", () => {
-    sidebar.classList.remove("show");
-    overlay.classList.remove("show");
+  sidebar.classList.remove("show");
+  overlay.classList.remove("show");
 });

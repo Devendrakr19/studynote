@@ -5874,6 +5874,7 @@ const htmlData = [
       <li>Web Workers API</li>
       <li>History API</li>
       <li>File API</li>
+      <li>Fetch API</li>
     </ul>
 
     <p style="margin-top:15px;">
@@ -8012,300 +8013,597 @@ const htmlData = [
     </code></pre>
     </div>
 
-<h2 style="margin-bottom:10px;">Embedding External Content in HTML</h2>
+    <h2 style="margin-bottom:10px;">Embedding External Content in HTML</h2>
+
+    <p style="margin-top:10px;">
+    HTML provides tags to display external content inside a web page.
+    </p>
+
+    <p>
+    You can embed:
+    </p>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li>Videos</li>
+
+    <li>Maps</li>
+
+    <li>Another website</li>
+
+    <li>PDF files</li>
+
+    <li>Media players</li>
+
+    <li>Online tools</li>
+
+    </ul>
+
+    <p>
+    The three main tags used are:
+    </p>
+
+    <ol style="padding-left:20px; margin-top:10px;">
+
+    <li><code>&lt;iframe&gt;</code></li>
+
+    <li><code>&lt;embed&gt;</code></li>
+
+    <li><code>&lt;object&gt;</code></li>
+
+    </ol> 
+
+    <h2 style="margin-top:20px;">&lt;iframe&gt; — Inline Frame</h2>
+
+    <p style="margin-top:10px;">
+    The <code>&lt;iframe&gt;</code> tag is the most commonly used element for embedding external content.
+    </p>
+
+    <p>
+    It loads an entire HTML document or webpage inside a small window on your page.
+    </p>
+
+    <h3 style="margin-top:20px;">Uses</h3>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li>Embedding YouTube videos</li>
+
+    <li>Google Maps</li>
+
+    <li>External websites</li>
+
+    <li>Payment forms (Stripe, Razorpay)</li>
+
+    <li>Advertisements (Google Ads, Facebook Ads)</li>
+
+    </ul>
+
+    <h3 style="margin-top:20px;">Important Attributes</h3>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+
+    <th style="padding:10px;">Attribute</th>
+
+    <th style="padding:10px;">Purpose</th>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">src</td>
+
+    <td style="padding:10px;">URL of the page to display.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">width</td>
+
+    <td style="padding:10px;">Width of the iframe.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">height</td>
+
+    <td style="padding:10px;">Height of the iframe.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">title</td>
+
+    <td style="padding:10px;">Accessibility description.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">allowfullscreen</td>
+
+    <td style="padding:10px;">Allows fullscreen mode.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">loading="lazy"</td>
+
+    <td style="padding:10px;">Loads the iframe only when needed.</td>
+
+    </tr>
+
+    </table>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code">
+    <pre><code>
+    &lt;iframe
+
+    src="https://example.com"
+
+    width="500"
+
+    height="300"
+
+    title="Example Website"
+
+    &gt;
+
+    &lt;/iframe&gt;
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:20px;">&lt;embed&gt; — Embedding Non-HTML Content</h2>
+
+    <p style="margin-top:10px;">
+    The <code>&lt;embed&gt;</code> tag is used to embed external files directly into a webpage.
+    </p>
+
+    <p>
+    Unlike <code>&lt;iframe&gt;</code>, it does not load an entire webpage.
+    </p>
+
+    <h3 style="margin-top:20px;">Uses</h3>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li>PDF files</li>
+
+    <li>Audio files</li>
+
+    <li>Video files</li>
+
+    <li>SVG images</li>
+
+    <li>Flash content (legacy)</li>
+
+    </ul>
+
+    <h3 style="margin-top:20px;">Important Attributes</h3>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+
+    <th style="padding:10px;">Attribute</th>
+
+    <th style="padding:10px;">Purpose</th>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">src</td>
+
+    <td style="padding:10px;">Path of the file.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">type</td>
+
+    <td style="padding:10px;">MIME type of the file.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">width</td>
+
+    <td style="padding:10px;">Width.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">height</td>
+
+    <td style="padding:10px;">Height.</td>
+
+    </tr>
+
+    </table>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code">
+    <pre><code>
+    &lt;embed
+
+    src="resume.pdf"
+
+    type="application/pdf"
+
+    width="600"
+
+    height="400"
+
+    &gt;
+    </code></pre>
+    </div>
+
+    <h2 style="margin-top:20px;">&lt;object&gt; — General Purpose Embedding</h2>
+
+    <p style="margin-top:10px;">
+    The <code>&lt;object&gt;</code> tag is a flexible element used to embed different types of external resources.
+    </p>
+
+    <p>
+    It can display files and also provide fallback content if the browser cannot display the file.
+    </p>
+
+    <h3 style="margin-top:20px;">Uses</h3>
+
+    <ul style="padding-left:20px; margin-top:10px;">
+
+    <li>PDF files</li>
+
+    <li>Images</li>
+
+    <li>Videos</li>
+
+    <li>Flash (legacy)</li>
+
+    <li>External webpages (rare)</li>
+
+    </ul>
+
+    <h3 style="margin-top:20px;">Important Attributes</h3>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+
+    <th style="padding:10px;">Attribute</th>
+
+    <th style="padding:10px;">Purpose</th>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">data</td>
+
+    <td style="padding:10px;">Resource to display.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">type</td>
+
+    <td style="padding:10px;">File MIME type.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">width</td>
+
+    <td style="padding:10px;">Width.</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">height</td>
+
+    <td style="padding:10px;">Height.</td>
+
+    </tr>
+
+    </table>
+
+    <h3 style="margin-top:20px;">Example</h3>
+
+    <div class="code">
+    <pre><code>
+    &lt;object
+
+    data="resume.pdf"
+
+    type="application/pdf"
+
+    width="600"
+
+    height="400"
+
+    &gt;
+
+    PDF not supported.
+
+    &lt;/object&gt;
+    </code></pre>
+    </div>
+
+    <h2>Comparison</h2>
+
+    <table
+    border="1"
+    style="
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    ">
+
+    <tr>
+
+    <th style="padding:10px;">Feature</th>
+
+    <th style="padding:10px;">&lt;iframe&gt;</th>
+
+    <th style="padding:10px;">&lt;embed&gt;</th>
+
+    <th style="padding:10px;">&lt;object&gt;</th>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">Embeds Webpages</td>
+
+    <td style="padding:10px;">✅ Yes</td>
+
+    <td style="padding:10px;">❌ No</td>
+
+    <td style="padding:10px;">⚠ Rarely</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">Embeds PDF</td>
+
+    <td style="padding:10px;">✅ Yes</td>
+
+    <td style="padding:10px;">✅ Yes</td>
+
+    <td style="padding:10px;">✅ Yes</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">Embeds Images</td>
+
+    <td style="padding:10px;">❌</td>
+
+    <td style="padding:10px;">✅</td>
+
+    <td style="padding:10px;">✅</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">Fallback Content</td>
+
+    <td style="padding:10px;">❌</td>
+
+    <td style="padding:10px;">❌</td>
+
+    <td style="padding:10px;">✅</td>
+
+    </tr>
+
+    <tr>
+
+    <td style="padding:10px;">Most Common Today</td>
+
+    <td style="padding:10px;">⭐⭐⭐⭐⭐</td>
+
+    <td style="padding:10px;">⭐⭐</td>
+
+    <td style="padding:10px;">⭐⭐</td>
+
+    </tr>
+
+    </table>
+
+    <h2 style="margin-bottom:10px; margin-top:20px;">Fetch API</h2>
 
 <p style="margin-top:10px;">
-HTML provides tags to display external content inside a web page.
+The <strong>Fetch API</strong> is a browser-provided Web API used to communicate with a server over the internet.
 </p>
 
 <p>
-You can embed:
+It allows you to:
 </p>
 
 <ul style="padding-left:20px; margin-top:10px;">
 
-<li>Videos</li>
+<li>Get data from a server.</li>
 
-<li>Maps</li>
+<li>Send data to a server.</li>
 
-<li>Another website</li>
+<li>Update existing data.</li>
 
-<li>PDF files</li>
-
-<li>Media players</li>
-
-<li>Online tools</li>
+<li>Delete data from a server.</li>
 
 </ul>
 
 <p>
-The three main tags used are:
-</p>
+Fetch is the modern replacement for the older <code>XMLHttpRequest (XHR)</code> API.
+</p> 
 
-<ol style="padding-left:20px; margin-top:10px;">
-
-<li><code>&lt;iframe&gt;</code></li>
-
-<li><code>&lt;embed&gt;</code></li>
-
-<li><code>&lt;object&gt;</code></li>
-
-</ol> 
-
-<h2 style="margin-top:20px;">&lt;iframe&gt; — Inline Frame</h2>
+<h2>Why do we need Fetch API?</h2>
 
 <p style="margin-top:10px;">
-The <code>&lt;iframe&gt;</code> tag is the most commonly used element for embedding external content.
+Most websites don't store all their data inside HTML.
 </p>
 
 <p>
-It loads an entire HTML document or webpage inside a small window on your page.
+Instead, they request data from a server whenever it's needed.
 </p>
 
-<h3 style="margin-top:20px;">Uses</h3>
+<p>
+Examples:
+</p>
 
-<ul style="padding-left:20px; margin-top:10px;">
+<ul style="padding-left:20px;">
 
-<li>Embedding YouTube videos</li>
+<li>Login</li>
 
-<li>Google Maps</li>
+<li>Displaying products</li>
 
-<li>External websites</li>
+<li>Loading user profiles</li>
 
-<li>Payment forms (Stripe, Razorpay)</li>
+<li>Weather information</li>
 
-<li>Advertisements (Google Ads, Facebook Ads)</li>
+<li>News websites</li>
+
+<li>Social media posts</li>
 
 </ul>
 
-<h3 style="margin-top:20px;">Important Attributes</h3>
+<p>
+All of these use HTTP requests, and the Fetch API is one way to make those requests.
+</p> 
 
-<table
-border="1"
+<h2>How Fetch Works</h2>
+
+<div
 style="
-border-collapse:collapse;
-width:100%;
 margin-top:10px;
-text-align:center;
+padding:15px; 
+border:1px solid #ccc;
+font-family:monospace;
+white-space:pre;
+overflow-x:auto;
 ">
 
-<tr>
+Browser
 
-<th style="padding:10px;">Attribute</th>
+     │
 
-<th style="padding:10px;">Purpose</th>
+fetch()
 
-</tr>
+     │
 
-<tr>
+     ▼
 
-<td style="padding:10px;">src</td>
+Server
 
-<td style="padding:10px;">URL of the page to display.</td>
+     │
 
-</tr>
+Processes Request
 
-<tr>
+     │
 
-<td style="padding:10px;">width</td>
+Returns Response
 
-<td style="padding:10px;">Width of the iframe.</td>
+     ▼
 
-</tr>
+Browser receives the data
 
-<tr>
+</div>
+ 
 
-<td style="padding:10px;">height</td>
-
-<td style="padding:10px;">Height of the iframe.</td>
-
-</tr>
-
-<tr>
-
-<td style="padding:10px;">title</td>
-
-<td style="padding:10px;">Accessibility description.</td>
-
-</tr>
-
-<tr>
-
-<td style="padding:10px;">allowfullscreen</td>
-
-<td style="padding:10px;">Allows fullscreen mode.</td>
-
-</tr>
-
-<tr>
-
-<td style="padding:10px;">loading="lazy"</td>
-
-<td style="padding:10px;">Loads the iframe only when needed.</td>
-
-</tr>
-
-</table>
-
-<h3 style="margin-top:20px;">Example</h3>
+<h2 style="margin-top:20px;">Basic Syntax</h2>
 
 <div class="code">
 <pre><code>
-&lt;iframe
+fetch(url)
+.then(response => response.json())
+.then(data => {
 
-src="https://example.com"
+console.log(data);
 
-width="500"
-
-height="300"
-
-title="Example Website"
-
-&gt;
-
-&lt;/iframe&gt;
+});
 </code></pre>
 </div>
 
-<h2 style="margin-top:20px;">&lt;embed&gt; — Embedding Non-HTML Content</h2>
-
-<p style="margin-top:10px;">
-The <code>&lt;embed&gt;</code> tag is used to embed external files directly into a webpage.
-</p>
-
-<p>
-Unlike <code>&lt;iframe&gt;</code>, it does not load an entire webpage.
-</p>
-
-<h3 style="margin-top:20px;">Uses</h3>
-
-<ul style="padding-left:20px; margin-top:10px;">
-
-<li>PDF files</li>
-
-<li>Audio files</li>
-
-<li>Video files</li>
-
-<li>SVG images</li>
-
-<li>Flash content (legacy)</li>
-
-</ul>
-
-<h3 style="margin-top:20px;">Important Attributes</h3>
+<h2>Understanding the Syntax</h2>
 
 <table
 border="1"
 style="
-border-collapse:collapse;
 width:100%;
-margin-top:10px;
+border-collapse:collapse;
 text-align:center;
+margin-top:10px;
 ">
 
 <tr>
 
-<th style="padding:10px;">Attribute</th>
+<th style="padding:10px;">Part</th>
 
-<th style="padding:10px;">Purpose</th>
-
-</tr>
-
-<tr>
-
-<td style="padding:10px;">src</td>
-
-<td style="padding:10px;">Path of the file.</td>
+<th style="padding:10px;">Meaning</th>
 
 </tr>
 
 <tr>
 
-<td style="padding:10px;">type</td>
+<td style="padding:10px;">fetch()</td>
 
-<td style="padding:10px;">MIME type of the file.</td>
-
-</tr>
-
-<tr>
-
-<td style="padding:10px;">width</td>
-
-<td style="padding:10px;">Width.</td>
+<td style="padding:10px;">Makes an HTTP request.</td>
 
 </tr>
 
 <tr>
 
-<td style="padding:10px;">height</td>
+<td style="padding:10px;">response</td>
 
-<td style="padding:10px;">Height.</td>
+<td style="padding:10px;">Server's reply.</td>
 
 </tr>
 
-</table>
-
-<h3 style="margin-top:20px;">Example</h3>
-
-<div class="code">
-<pre><code>
-&lt;embed
-
-src="resume.pdf"
-
-type="application/pdf"
-
-width="600"
-
-height="400"
-
-&gt;
-</code></pre>
-</div>
-
-<h2 style="margin-top:20px;">&lt;object&gt; — General Purpose Embedding</h2>
-
-<p style="margin-top:10px;">
-The <code>&lt;object&gt;</code> tag is a flexible element used to embed different types of external resources.
-</p>
-
-<p>
-It can display files and also provide fallback content if the browser cannot display the file.
-</p>
-
-<h3 style="margin-top:20px;">Uses</h3>
-
-<ul style="padding-left:20px; margin-top:10px;">
-
-<li>PDF files</li>
-
-<li>Images</li>
-
-<li>Videos</li>
-
-<li>Flash (legacy)</li>
-
-<li>External webpages (rare)</li>
-
-</ul>
-
-<h3 style="margin-top:20px;">Important Attributes</h3>
-
-<table
-border="1"
-style="
-border-collapse:collapse;
-width:100%;
-margin-top:10px;
-text-align:center;
-">
-
 <tr>
 
-<th style="padding:10px;">Attribute</th>
+<td style="padding:10px;">response.json()</td>
 
-<th style="padding:10px;">Purpose</th>
+<td style="padding:10px;">Converts JSON into a JavaScript object.</td>
 
 </tr>
 
@@ -8313,142 +8611,331 @@ text-align:center;
 
 <td style="padding:10px;">data</td>
 
-<td style="padding:10px;">Resource to display.</td>
+<td style="padding:10px;">Actual data received from the server.</td>
 
 </tr>
 
-<tr>
+</table> 
 
-<td style="padding:10px;">type</td>
+<h2 style="margin-top:20px;">Example: GET Request</h2>
 
-<td style="padding:10px;">File MIME type.</td>
-
-</tr>
-
-<tr>
-
-<td style="padding:10px;">width</td>
-
-<td style="padding:10px;">Width.</td>
-
-</tr>
-
-<tr>
-
-<td style="padding:10px;">height</td>
-
-<td style="padding:10px;">Height.</td>
-
-</tr>
-
-</table>
-
-<h3 style="margin-top:20px;">Example</h3>
+<p>
+GET is used to retrieve data.
+</p>
 
 <div class="code">
 <pre><code>
-&lt;object
+fetch(
 
-data="resume.pdf"
+"https://jsonplaceholder.typicode.com/users"
 
-type="application/pdf"
+)
 
-width="600"
+.then(response =>
 
-height="400"
+response.json()
 
-&gt;
+)
 
-PDF not supported.
+.then(data => {
 
-&lt;/object&gt;
+console.log(data);
+
+});
 </code></pre>
 </div>
+ 
 
-<h2>Comparison</h2>
+<h2>HTTP Methods</h2>
 
 <table
 border="1"
 style="
-border-collapse:collapse;
 width:100%;
-margin-top:10px;
+border-collapse:collapse;
 text-align:center;
+margin-top:10px;
 ">
 
 <tr>
 
-<th style="padding:10px;">Feature</th>
+<th style="padding:10px;">Method</th>
 
-<th style="padding:10px;">&lt;iframe&gt;</th>
-
-<th style="padding:10px;">&lt;embed&gt;</th>
-
-<th style="padding:10px;">&lt;object&gt;</th>
+<th style="padding:10px;">Purpose</th>
 
 </tr>
 
 <tr>
 
-<td style="padding:10px;">Embeds Webpages</td>
+<td style="padding:10px;">GET</td>
 
-<td style="padding:10px;">✅ Yes</td>
-
-<td style="padding:10px;">❌ No</td>
-
-<td style="padding:10px;">⚠ Rarely</td>
+<td style="padding:10px;">Retrieve data.</td>
 
 </tr>
 
 <tr>
 
-<td style="padding:10px;">Embeds PDF</td>
+<td style="padding:10px;">POST</td>
 
-<td style="padding:10px;">✅ Yes</td>
-
-<td style="padding:10px;">✅ Yes</td>
-
-<td style="padding:10px;">✅ Yes</td>
+<td style="padding:10px;">Create new data.</td>
 
 </tr>
 
 <tr>
 
-<td style="padding:10px;">Embeds Images</td>
+<td style="padding:10px;">PUT</td>
 
-<td style="padding:10px;">❌</td>
-
-<td style="padding:10px;">✅</td>
-
-<td style="padding:10px;">✅</td>
+<td style="padding:10px;">Replace existing data.</td>
 
 </tr>
 
 <tr>
 
-<td style="padding:10px;">Fallback Content</td>
+<td style="padding:10px;">PATCH</td>
 
-<td style="padding:10px;">❌</td>
-
-<td style="padding:10px;">❌</td>
-
-<td style="padding:10px;">✅</td>
+<td style="padding:10px;">Update part of existing data.</td>
 
 </tr>
 
 <tr>
 
-<td style="padding:10px;">Most Common Today</td>
+<td style="padding:10px;">DELETE</td>
 
-<td style="padding:10px;">⭐⭐⭐⭐⭐</td>
-
-<td style="padding:10px;">⭐⭐</td>
-
-<td style="padding:10px;">⭐⭐</td>
+<td style="padding:10px;">Delete data.</td>
 
 </tr>
 
 </table>
+ 
+
+<h2 style="margin-top:20px;">POST Request</h2>
+
+<p>
+POST sends new data to the server.
+</p>
+
+<div class="code">
+<pre><code>
+fetch(
+
+"https://jsonplaceholder.typicode.com/posts",
+
+{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify({
+
+title:"HTML",
+
+author:"Devendra"
+
+})
+
+}
+
+)
+
+.then(response =>
+
+response.json()
+
+)
+
+.then(data =>
+
+console.log(data)
+
+);
+</code></pre>
+</div> 
+
+<h2>PUT Request</h2>
+
+<p>
+PUT replaces an existing resource.
+</p>
+
+<div class="code">
+<pre><code>
+fetch(
+
+"https://jsonplaceholder.typicode.com/posts/1",
+
+{
+
+method:"PUT",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify({
+
+title:"Updated Title"
+
+})
+
+}
+
+);
+</code></pre>
+</div>
+ 
+
+<h2>PATCH Request</h2>
+
+<p>
+PATCH updates only specific fields.
+</p>
+
+<div class="code">
+<pre><code>
+fetch(
+
+"https://jsonplaceholder.typicode.com/posts/1",
+
+{
+
+method:"PATCH",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify({
+
+title:"New Title"
+
+})
+
+}
+
+);
+</code></pre>
+</div> 
+
+<h2>DELETE Request</h2>
+
+<div class="code">
+<pre><code>
+fetch(
+
+"https://jsonplaceholder.typicode.com/posts/1",
+
+{
+
+method:"DELETE"
+
+}
+
+);
+</code></pre>
+</div>
+ 
+
+<h2>Headers</h2>
+
+<p>
+Headers provide additional information about the request.
+</p>
+
+Example:
+
+<div class="code">
+<pre><code>
+headers:{
+
+"Content-Type":"application/json",
+
+Authorization:"Bearer TOKEN"
+
+}
+</code></pre>
+</div>
+ 
+
+<h2>Sending JSON Data</h2>
+
+<p>
+JavaScript objects must be converted into JSON before sending.
+</p>
+
+<div class="code">
+<pre><code>
+body:
+
+JSON.stringify({
+
+name:"Devendra",
+
+age:25
+
+})
+</code></pre>
+</div>
+ 
+
+<h2>Receiving JSON</h2>
+
+<div class="code">
+<pre><code>
+response.json()
+</code></pre>
+</div>
+
+<p>
+Converts JSON into a JavaScript object.
+</p>
+ 
+
+<h2>Error Handling</h2>
+
+<div class="code">
+<pre><code>
+fetch(url)
+
+.then(response=>{
+
+if(!response.ok){
+
+throw new Error(
+
+"Request Failed"
+
+);
+
+}
+
+return response.json();
+
+})
+
+.then(data=>{
+
+console.log(data);
+
+})
+
+.catch(error=>{
+
+console.log(error);
+
+});
+</code></pre>
+</div>
+
+ 
 
     `,
   },
