@@ -2,9 +2,11 @@
 import cssData from "../data/css.js";
 import dsaData from "../data/dsa.js";
 import reactData from "../data/react.js";
+import javaScriptData from "../data/javascript.js";
 
 const htmlList = document.getElementById("htmlList");
 const cssList = document.getElementById("cssList");
+const jsList = document.getElementById("jsList");
 const reactList = document.getElementById("reactList");
 const dsaList = document.getElementById("dsaList");
 
@@ -47,6 +49,7 @@ searchInput.addEventListener("input", () => {
 async function loadTopics() {
   renderSidebar(htmlData, htmlList);
   renderSidebar(cssData, cssList);
+  renderSidebar(javaScriptData, jsList);
   renderSidebar(reactData, reactList);
   renderSidebar(dsaData, dsaList);
 }

@@ -76,6 +76,12 @@ header{
   margin-bottom:15px;
   line-height:1.7;
 }
+.content ul{
+  margin-left:12px; 
+}
+.content ul li{
+  margin-bottom:5px; 
+}
 
 #sidebarBtn{ 
   position: absolute;
